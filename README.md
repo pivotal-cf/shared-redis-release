@@ -1,14 +1,13 @@
-# Cloud Foundry Redis Release
+# Cloud Foundry Shared Redis Release
 
-This repository contains a BOSH release for a Cloud Foundry Redis service
-broker. It supports shared-vm plans. Dedicated-vm plans are being deprecated.
+This repository contains a BOSH release for a Cloud Foundry Shared Redis service
+broker. It supports a shared-vm plan.
 
-**There is no active feature development for this repository. The repository will be supported until July 31st 2019, after which we will continue to support open source Redis deployments in a different repo that we will share and link here.**
 **Note: Breaking change > version 434.3.6 - the `redis.limits.maxclients` property is now `redis.maxclients`** 
 
 ```shell
-git clone https://github.com/pivotal-cf/cf-redis-release ~/workspace/cf-redis-release
-cd ~/workspace/cf-redis-release
+git clone https://github.com/pivotal-cf/shared-redis-release ~/workspace/shared-redis-release
+cd ~/workspace/shared-redis-release
 git submodule update --init --recursive
 ```
 
@@ -128,9 +127,6 @@ Communicates to the CloudFoundry [Cloud Controller](https://docs.cloudfoundry.or
 which maintains the database for the [CF Marketplace](https://cli.cloudfoundry.org/en-US/cf/marketplace.html).
 This enables the service plans on the CF Marketplace so that App Developers can create and delete service instances of those plans.
 
-**Note:** As of v434.0.13, the broker-registrar will disable service access to the dedicated-vm service plan
-as the service plan is being deprecated.
-
 ### broker-deregistrar
 Communicates with the CF Cloud Controller to remove the cf-redis broker and service plans from the CF Marketplace
 as well as [delete the broker deployment](https://cli.cloudfoundry.org/en-US/cf/delete-service-broker.html) from BOSH.
@@ -143,13 +139,3 @@ If you wish to remove the service broker, perform a
 ### smoke-tests
 Runs smoke tests which tests the lifecycle and functionality of the both the dedicated-vm and shared-vm services.
 See the [Redis documentation](https://docs.pivotal.io/redis/smoke-tests.html) for more information.
-
-### remove-deprecated-functionality
-Available as of v434.0.13. Communicates with the CF Cloud Controller to disable service access to the dedicated-vm service plan.
-This allows operators to remove the dedicated-vm service plan from the marketplace
-in order to prevent App Developers from creating new service instances in preparation for the deprecation of the dedicated-vm plan.
-
-### cleanup-metadata-if-dedicated-disabled
-Available as of v434.0.15. Communicates with the CF Cloud Controller to purge references to dedicated-vm service instances
-if no dedicated-vms have been provisioned. The purpose for this errand is to provide a smoother experience for migrating
-to On-Demand Instances given the Ops Manager tile deployment flow. Intended as a temporary errand during deprecation of dedicated-vms.
