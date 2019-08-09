@@ -22,10 +22,10 @@ describe 'metrics', :skip_metrics => true do
   end
 
   describe 'broker metrics' do
-    %w[/p-redis/service-broker/dedicated_vm_plan/total_instances
-       /p-redis/service-broker/dedicated_vm_plan/available_instances
-       /p-redis/service-broker/shared_vm_plan/available_instances
-       /p-redis/service-broker/shared_vm_plan/total_instances].each do |metric_name|
+    %w[_p_redis_service_broker_dedicated_vm_plan/total_instances
+       _p_redis_service-broker_dedicated_vm_plan_available_instances
+       _p_redis_service-broker_shared_vm_plan_available_instances
+       _p_redis_service-broker_shared_vm_plan_total_instances].each do |metric_name|
       it "contains #{metric_name} metric for redis broker" do
         assert_metric(metric_name, Helpers::Environment::BROKER_JOB_NAME, 0)
       end
@@ -33,16 +33,16 @@ describe 'metrics', :skip_metrics => true do
   end
 
   describe 'redis metrics' do
-    %w[/p-redis/info/cpu/used_cpu_sys
-       /p-redis/info/memory/used_memory
-       /p-redis/info/memory/maxmemory
-       /p-redis/info/stats/total_commands_processed
-       /p-redis/info/stats/total_connections_received
-       /p-redis/info/memory/mem_fragmentation_ratio
-       /p-redis/info/stats/evicted_keys
-       /p-redis/info/server/uptime_in_seconds
-       /p-redis/info/server/uptime_in_days
-       /p-redis/info/persistence/rdb_last_bgsave_status].each do |metric_name|
+    %w[_p_redis_info_cpu_used_cpu_sys
+       _p_redis_info_memory_used_memory
+       _p_redis_info_memory_maxmemory
+       _p_redis_info_stats_total_commands_processed
+       _p_redis_info_stats_total_connections_received
+       _p_redis_info_memory_mem_fragmentation_ratio
+       _p_redis_info_stats_evicted_keys
+       _p_redis_info_server_uptime_in_seconds
+       _p_redis_info_server_uptime_in_days
+       _p_redis_info_persistence_rdb_last_bgsave_status].each do |metric_name|
       it "contains #{metric_name} metric for all dedicated nodes" do
         @number_of_nodes.times do |idx|
           assert_metric(metric_name, Helpers::Environment::DEDICATED_NODE_JOB_NAME, idx)
