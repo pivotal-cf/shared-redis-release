@@ -27,6 +27,30 @@ instance_groups:
   jobs:
   - name: cf-redis-broker
     release: cf-redis
+    properties:
+      broker:
+        host: ((broker_name)).((system_domain))
+        name: ((broker_name))
+        username: ((broker_username))
+        password: ((broker_password))
+      cf:
+        apps_domain: ((apps_domain))
+        system_domain: ((system_domain))
+      redis:       
+        config_command: configalias
+        maxmemory: 262144000
+        save_command: anotherrandomstring
+        bg_save_command: yetanotherrandomstring
+        broker:
+          name: ((broker_name))
+          network: ((default_network))
+          auth:
+            username: ((broker_username))
+            password: ((broker_password))
+          service_id: ((service_id))
+          service_instance_limit: 5
+          service_name: ((service_name))
+          shared_vm_plan_id: ((shared_vm_plan_id))
   - name: cf-cli-6-linux
     release: cf-cli
   - name: route_registrar
@@ -44,71 +68,46 @@ instance_groups:
         transport: tcp
   - name: broker-registrar
     release: cf-redis
+    properties:
+      broker:
+        name: ((broker_name))
+        username: ((broker_username))
+        password: ((broker_password))
+      cf:
+        api_url: https://api.((system_domain))
+        admin_username: ((cf_username))
+        admin_password: ((cf_password))
+      redis:
+        broker:
+          service_instance_limit: 5
   - name: broker-deregistrar
     release: cf-redis
+    properties:
+      broker:
+        name: ((broker_name))
+      cf:
+        api_url: https://api.((system_domain))
+        admin_username: ((cf_username))
+        admin_password: ((cf_password))
+      redis:
+        broker:
+          service_instance_limit: 5
   - name: smoke-tests
     release: cf-redis
-  - name: deprecate-dedicated-vm-plan
-    release: cf-redis
-  - name: cleanup-metadata-if-dedicated-disabled
-    release: cf-redis
-
-- instances: ((dedicated_node_count))
-  name: dedicated-node
-  azs: [((default_az))]
-  vm_type: ((default_vm_type))
-  networks:
-  - name: ((default_network))
-  persistent_disk_type: ((default_persistent_disk_type))
-  stemcell: default
-  jobs:
-  - name: dedicated-node
-    release: cf-redis
-  - name: bpm
-    release: bpm
-  - name: syslog_forwarder
-    release: syslog
-    properties: *syslog-configuration
-
-properties:
-  broker:
-    host: ((broker_name)).((system_domain))
-    name: ((broker_name))
-    password: ((broker_password))
-    username: ((broker_username))
-  cf:
-    admin_username: ((cf_username))
-    admin_password: ((cf_password))
-    api_url: https://api.((system_domain))
-    apps_domain: ((apps_domain))
-    system_domain: ((system_domain))
-  redis:
-    agent:
-      backend_port: 54321
-    bg_save_command: yetanotherrandomstring
-    broker:
-      auth:
-        password: ((broker_password))
-        username: ((broker_username))
-      backend_port: 12345
-      dedicated_vm_plan_id: ((dedicated_vm_plan_id))
-      enable_service_access: true
-      name: ((broker_name))
-      network: ((default_network))
-      route_name: ((broker_name))
-      service_id: ((service_id))
-      service_instance_limit: 5
-      dedicated_node_count: ((dedicated_node_count))
-      service_name: ((service_name))
-      shared_vm_plan_id: ((shared_vm_plan_id))
-      subdomain: ((broker_name))
-    config_command: configalias
-    maxmemory: 262144000
-    save_command: anotherrandomstring
-  retry:
-    backoff: linear
-    baseline_interval_milliseconds: 1000
-    max_attempts: 10
+    properties:
+      cf:
+        api_url: https://api.((system_domain))
+        apps_doimain: ((apps_domain))
+        system_domain: ((system_domain))
+        admin_username: ((cf_username))
+        admin_password: ((cf_password))
+      redis:
+        broker:
+          service_instance_limit: 5
+      retry:
+        backoff: linear
+        baseline_interval_milliseconds: 1000
+        max_attempts: 10
 
 releases:
 - name: cf-redis

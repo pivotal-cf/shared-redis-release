@@ -1,34 +1,8 @@
-<%
-dedicated_node_addresses = p('redis.broker.dedicated_nodes').clone
-
-if dedicated_node_addresses.empty?
-  if_link('dedicated_node') do |dedicated_node|
-    dedicated_node.instances.each do |instance|
-      dedicated_node_addresses.push(instance.address)
-    end
-  end
-end
-
-# broker should fail if the dedicated nodes addresses are not ip addresses.
-# This is our defense in case we accidentally have DNS turned on in a
-# BOSH Director 263+ world. Broker's statefile.json is using ip addresses to
-# uniquely identify and manage dedicated nodes thus mixing DNS with it
-# will corrupt it. Related story #150214496
-valid_ip_field = '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'
-ip_regex = Regexp.new("^(#{valid_ip_field}\.){3}#{valid_ip_field}$")
-
-dedicated_node_addresses.each do |address|
-  unless ip_regex.match(address.strip)
-    raise 'The broker only supports IP addresses for dedicated nodes'
-  end
-end
-%>
 ---
 redis:
   service_name: <%= p('redis.broker.service_name') %>
   service_id: <%= p('redis.broker.service_id') %>
   shared_vm_plan_id: <%= p('redis.broker.shared_vm_plan_id') %>
-  dedicated_vm_plan_id: <%= p('redis.broker.dedicated_vm_plan_id') %>
   host: <%= spec.ip %>
   data_directory: <%= p('redis.data_directory') %>
   pidfile_directory: <%= p('redis.pidfile_directory') %>
@@ -44,10 +18,6 @@ redis:
   long_description: <%= p('redis.broker.long_description') %>
   description: <%= p('redis.broker.description') %>
   icon_image: <%= p('redis.broker.icon_image') %>
-  dedicated:
-    nodes: <%= dedicated_node_addresses %>
-    port: <%= p('redis.broker.dedicated_port') %>
-    statefile_path: <%= p('redis.statefile_path') %>
 
 auth:
   username: <%= p('redis.broker.auth.username') %>

@@ -12,9 +12,6 @@ packages:
 consumes:
 - name: redis_broker
   type: redis_broker
-- name: dedicated_node
-  type: dedicated_node
-  optional: true
 
 properties:
   cf.api_url:
@@ -47,13 +44,8 @@ properties:
   redis.broker.service_name:
     description: Service name displayed in the catalog metadata
     default: p-redis
-  redis.broker.dedicated_node_count:
-    description: Number of provisioned dedicated instances
   redis.broker.service_instance_limit:
     description: The maximum number of instances allowed
-  redis.broker.dedicated_nodes:
-    description: List of node IPs for the dedicated plan
-    default: []
   retry.max_attempts:
     description: Maximum number of attempts when making CF API calls
     default: 10
