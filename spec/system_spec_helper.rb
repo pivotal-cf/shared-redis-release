@@ -85,7 +85,6 @@ RSpec.configure do |config|
 
 
   config.before(:all) do
-    redis_service_broker.deprovision_dedicated_service_instances!
     redis_service_broker.deprovision_shared_service_instances!
 
     if ExcludeHelper.service_backups_available?

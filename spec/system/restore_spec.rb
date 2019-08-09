@@ -130,43 +130,6 @@ describe 'restore' do
       end
     end
   end
-
-  context 'dedicated-vm' do
-    it_behaves_like 'it errors when run as non-root user', 'dedicated-vm'
-    it_behaves_like 'it errors when file is on wrong device', 'dedicated-vm'
-    it_behaves_like 'it errors when passed an incorrect guid', 'dedicated-vm'
-
-    context 'it can restore Redis' do
-      service_plan_name = 'dedicated-vm'
-
-      before(:all) do
-        @service_instance, @service_binding, vm_ip, @client = provision_and_build_service_client(service_plan_name)
-
-        @instance = bosh.instance(deployment_name, vm_ip)
-
-        bosh.scp(deployment_name, @instance, DUMP_FIXTURE_PATH, TEMP_COPY_PATH)
-        bosh.ssh(deployment_name, @instance, "sudo mv #{TEMP_COPY_PATH} #{BACKUP_PATH}")
-        expect(@client.read('moaning')).to_not eq('myrtle')
-
-        @prerestore_timestamp = bosh.ssh(deployment_name, @instance, 'date +%s')
-        bosh.ssh(deployment_name, @instance, "sudo #{RESTORE_BINARY} #{get_restore_args(service_plan_name, @service_instance.id, BACKUP_PATH)}")
-      end
-
-      after(:all) do
-        unbind_and_deprovision(@service_binding, @service_instance, service_plan_name)
-      end
-
-      it 'restores data to the instance' do
-        expect(@client.read('moaning')).to eq('myrtle')
-
-        vm_log = bosh.ssh(deployment_name, @instance, 'sudo cat /var/vcap/sys/log/service-backup/restore.log')
-        contains_expected_log = drop_log_lines_before(@prerestore_timestamp, vm_log).any? do |line|
-          line.include?('Redis data restore completed successfully')
-        end
-        expect(contains_expected_log).to be true
-      end
-    end
-  end
 end
 
 def provision_and_build_service_client(service_plan_name)
