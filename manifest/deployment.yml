@@ -107,7 +107,7 @@ properties:
     save_command: anotherrandomstring
   retry:
     backoff: linear
-    baseline_interval_milliseconds: 1000
+    baseline_interval_milliseconds: 5000
     max_attempts: 10
 
 releases:
