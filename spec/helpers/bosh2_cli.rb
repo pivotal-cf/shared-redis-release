@@ -57,7 +57,7 @@ module Helpers
     end
 
     def recreate(deployment, instance)
-      execute_successfully("#{@bosh_cli} -d #{deployment} recreate #{instance} --force")
+      execute_successfully("#{@bosh_cli} -d #{deployment} recreate #{instance}")
     end
 
     def start(deployment, instance)
