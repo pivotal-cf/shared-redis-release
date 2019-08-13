@@ -22,10 +22,10 @@ describe 'metrics', :skip_metrics => true do
   end
 
   describe 'broker metrics' do
-    %w[_p_redis_service_broker_dedicated_vm_plan/total_instances
-       _p_redis_service-broker_dedicated_vm_plan_available_instances
-       _p_redis_service-broker_shared_vm_plan_available_instances
-       _p_redis_service-broker_shared_vm_plan_total_instances].each do |metric_name|
+    %w[_p_redis_service_broker_dedicated_vm_plan_total_instances
+       _p_redis_service_broker_dedicated_vm_plan_available_instances
+       _p_redis_service_broker_shared_vm_plan_available_instances
+       _p_redis_service_broker_shared_vm_plan_total_instances].each do |metric_name|
       it "contains #{metric_name} metric for redis broker" do
         assert_metric(metric_name, Helpers::Environment::BROKER_JOB_NAME, 0)
       end
