@@ -26,7 +26,7 @@ instance_groups:
         - ((broker_name)).((system_domain))
   jobs:
   - name: cf-redis-broker
-    release: cf-redis
+    release: shared-redis
   - name: cf-cli-6-linux
     release: cf-cli
   - name: route_registrar
@@ -43,15 +43,15 @@ instance_groups:
         port: ((syslog_endpoint_port))
         transport: tcp
   - name: broker-registrar
-    release: cf-redis
+    release: shared-redis
   - name: broker-deregistrar
-    release: cf-redis
+    release: shared-redis
   - name: smoke-tests
-    release: cf-redis
+    release: shared-redis
   - name: deprecate-dedicated-vm-plan
-    release: cf-redis
+    release: shared-redis
   - name: cleanup-metadata-if-dedicated-disabled
-    release: cf-redis
+    release: shared-redis
 
 - instances: ((dedicated_node_count))
   name: dedicated-node
@@ -63,7 +63,7 @@ instance_groups:
   stemcell: default
   jobs:
   - name: dedicated-node
-    release: cf-redis
+    release: shared-redis
   - name: bpm
     release: bpm
   - name: syslog_forwarder
@@ -111,7 +111,7 @@ properties:
     max_attempts: 10
 
 releases:
-- name: cf-redis
+- name: shared-redis
   version: latest
 - name: routing
   version: ((routing_version))
