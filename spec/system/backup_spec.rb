@@ -183,56 +183,6 @@ describe 'backups', :skip_service_backups => true do
     end
   end
 
-  context 'dedicated vm plan' do
-    let(:s3_client) { Aws::S3::Client.new }
-    it_behaves_like 'backups are enabled'
-
-    def service_name
-      test_manifest['properties']['redis']['broker']['service_name']
-    end
-
-    def service_plan_name
-      'dedicated-vm'
-    end
-
-    before do
-      @service_instance = service_broker.provision_instance(service_name, service_plan_name)
-      @service_binding = service_broker.bind_instance(@service_instance, service_name, service_plan_name)
-      @instance = bosh.instance(deployment_name, @service_binding.credentials[:host])
-      clean_s3_bucket
-    end
-
-    after do
-      service_broker.unbind_instance(@service_binding, service_name, service_plan_name)
-      service_broker.deprovision_instance(@service_instance, service_name, service_plan_name)
-      clean_s3_bucket
-    end
-
-    describe 'end to end' do
-      it 'uploads data to S3 in RDB format and removes local backup files' do
-
-        client = service_client_builder(@service_binding)
-        client.write('foo', 'bar')
-        with_redis_under_stress(@service_binding) do
-          assert_manual_backup_succeeds(@service_binding)
-        end
-
-        assert_rdb_file_is_valid
-
-        s3_statefile = find_s3_statefile
-        expect(s3_statefile).to be_nil
-
-        ls_result = bosh.ssh(deployment_name, @instance,"sudo ls #{source_folder}")
-        expect(ls_result).to be_empty
-      end
-    end
-
-    it 'returns the correct instance IDs' do
-      ids = bosh.ssh(deployment_name, @instance, "sudo #{service_identifier_executable}")
-      expect(ids).to match(@service_binding.service_instance.id)
-    end
-  end
-
   def with_repeated_action(service_binding, action)
     runner = Thread.new do
       begin

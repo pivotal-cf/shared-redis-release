@@ -23,17 +23,6 @@ describe 'logging' do
         expect { syslog_helper.get_line }.to eventually(include Helpers::Environment::BROKER_JOB_NAME).within 5
       end
     end
-
-    context 'dedicated-node' do
-      before do
-        bosh.ssh(deployment_name, "#{Helpers::Environment::DEDICATED_NODE_JOB_NAME}/0", 'sudo /var/vcap/bosh/bin/monit restart redis')
-        expect(bosh.wait_for_process_start(deployment_name, "#{Helpers::Environment::DEDICATED_NODE_JOB_NAME}/0", ('redis'))).to be true
-      end
-
-      it 'forwards logs' do
-        expect { syslog_helper.get_line }.to eventually(include Helpers::Environment::DEDICATED_NODE_JOB_NAME).within 5
-      end
-    end
   end
 
   describe 'redis broker' do
@@ -57,48 +46,6 @@ describe 'logging' do
 
       log_paths = bosh.log_files(deployment_name, Helpers::Environment::BROKER_JOB_NAME)
       expect(log_paths.map(&:basename).map(&:to_s)).to include(*expected_log_files)
-    end
-  end
-
-  describe 'dedicated redis process' do
-    REDIS_SERVER_STARTED_PATTERN = 'Ready to accept connections'
-
-    def service_name
-      test_manifest['properties']['redis']['broker']['service_name']
-    end
-
-    def service_plan_name
-      'dedicated-vm'
-    end
-
-    before(:all) do
-      @service_instance = service_broker.provision_instance(service_name, service_plan_name)
-      @binding = service_broker.bind_instance(@service_instance, service_name, service_plan_name)
-      @redis_server_port_pattern = "Running mode=.*, port=#{@binding.credentials[:port]}"
-
-      @host = @binding.credentials[:host]
-      @log = Logger.new(STDOUT)
-      @log.info("Provisioned dedicated instance #{@host} for tests")
-    end
-
-    after(:all) do
-      service_broker.unbind_instance(@binding, service_name, service_plan_name)
-      service_broker.deprovision_instance(@service_instance, service_name, service_plan_name)
-      @log.info("Deprovisioned dedicated instance #{@host} for tests")
-    end
-
-    it 'logs to its local log file' do
-      redis_log_file = '/var/vcap/sys/log/redis/redis.log'
-      expect(count_from_log(
-                 deployment_name,
-                 "#{Helpers::Environment::DEDICATED_NODE_JOB_NAME}/0",
-                 @redis_server_port_pattern,
-                 redis_log_file)).to be > 0
-      expect(count_from_log(
-                 deployment_name,
-                 "#{Helpers::Environment::DEDICATED_NODE_JOB_NAME}/0",
-                 REDIS_SERVER_STARTED_PATTERN,
-                 redis_log_file)).to be > 0
     end
   end
 end
