@@ -3,9 +3,9 @@ aws-cli/awscli-bundle.zip:
   object_id: 0221dcb3-3ce0-44e6-8c4f-c5c2abf1b0eb
   sha: db33b4740a670c9fb3bc5515cd7f9861fa1b1b13
 ginkgo/ginkgo:
-  size: 10583320
-  object_id: 375645ba-af16-4ced-67aa-9f14a03f7c18
-  sha: e5697ace4ec310cc6bc1ac157b26dd254faa93ac
+  size: 120070
+  object_id: 7b33b2c8-b984-4f18-4c41-7291419274e4
+  sha: sha256:0a69f4ab381a76c151ae93634569393d8f10defb8234dd6c739a65ae8e09f0b4
 go/go1.12.9.linux-amd64.tar.gz:
   size: 127961523
   object_id: 8a04254c-3fcf-47e7-7e07-5b659085bb9d
