@@ -8,6 +8,7 @@ ginkgo/ginkgo:
   sha: e5697ace4ec310cc6bc1ac157b26dd254faa93ac
 go/go1.12.9.linux-amd64.tar.gz:
   size: 127961523
+  object_id: 8a04254c-3fcf-47e7-7e07-5b659085bb9d
   sha: sha256:ac2a6efcc1f5ec8bdc0db0a988bb1d301d64b6d61b7e8d9e42f662fbb75a2b9b
 nginx/nginx-1.8.0.tar.gz:
   size: 832104
