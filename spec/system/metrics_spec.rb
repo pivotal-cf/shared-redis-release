@@ -3,7 +3,7 @@ require 'system_spec_helper'
 describe 'metrics', :skip_metrics => true do
 
   before do
-    @origin_tag = test_manifest['properties']['service_metrics']['origin']
+    @origin_tag = 'p-redis'
     @outFile = Tempfile.new('smetrics')
     cf_target
     cf_login
