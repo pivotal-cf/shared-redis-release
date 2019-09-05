@@ -46,7 +46,7 @@ describe 'metrics', :skip_metrics => true do
         matches = file.readlines.grep(regex)
         return matches[0] unless matches.empty?
       end
-      sleep 1
+      sleep 2
     end
     raise("metric '#{metric_name}' for job '#{job_name}' with index '#{job_id}' not found")
   end
