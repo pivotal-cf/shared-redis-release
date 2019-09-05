@@ -40,13 +40,13 @@ describe 'metrics', :skip_metrics => true do
 
   def find_metric(metric_name, job_name, job_index)
     job_id = loggregator_agent_id_from_job_index(job_name, job_index)
-    60.times do
+    30.times do
       File.open(rlp_gateway_out_file, 'r') do |file|
         regex = /(?=.*"job":"#{job_name}")(?=.*"index":"#{job_id}")(?=.*"#{metric_name}")/
         matches = file.readlines.grep(regex)
         return matches[0] unless matches.empty?
       end
-      sleep 2
+      sleep 5
     end
     raise("metric '#{metric_name}' for job '#{job_name}' with index '#{job_id}' not found")
   end
