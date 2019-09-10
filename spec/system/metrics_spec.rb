@@ -52,7 +52,7 @@ describe 'metrics', :skip_metrics => true do
   def loggregator_agent_id_from_job_index(job_name, job_index)
     bosh.ssh(deployment_name,
              "#{job_name}/#{job_index}",
-             'sudo cat /var/vcap/jobs/loggregator_agent/config/bpm.yml | grep AGENT_INDEX | cut -d \" -f2')
+             'sudo cat /var/vcap/jobs/loggregator_agent/config/bpm.yml | grep AGENT_INDEX | awk \'{print $2}\'')
   end
 
   def rlp_gateway_out_file
