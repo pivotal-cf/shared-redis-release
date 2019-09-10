@@ -1,0 +1,151 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/164989097
+  * https://www.pivotaltracker.com/story/show/167706029
+  * https://www.pivotaltracker.com/story/show/167725270
+  * https://www.pivotaltracker.com/story/show/167802409
+  * https://www.pivotaltracker.com/story/show/167920648
+  * https://www.pivotaltracker.com/story/show/167942664
+  * https://www.pivotaltracker.com/story/show/168024123
+  * https://www.pivotaltracker.com/story/show/168034620
+  * https://www.pivotaltracker.com/story/show/168071557
+  * https://www.pivotaltracker.com/story/show/168263293
+
+## Commits
+
+  Amend command to get AGENT_INDEX
+  [#168024123]
+
+  Return AGENT_ID value after format change in bpm.yml
+  [#168024123]
+
+  Revert Ruby 2.6.0
+  [#168034620]
+
+  Bump ruby version in example app and shared-release
+  [#168024123]
+
+  Bump Ruby to 2.6.3
+  [#168024123]
+
+  Cut new shared-release with smoke-tests correctly submoduled
+  [#168034620]
+
+  Further increase timeout for metrics test.
+  [#168024123]
+
+  Increase test timeout to handle slower loggregator subsystem.
+  [#168024123]
+
+  Use expected origin rather than parsing manifest incorrectly.
+  [#168263293]
+
+  Compile ginkgo correctly.
+  [#167920648]
+
+  Delete history of old package blobs.
+  [#167920648]
+
+  Add explicit aws endpoint.
+  [#167920648]
+
+  Manually create final release
+  [#167920648]
+
+  Revert "Remove releases to fix state?"
+  This reverts commit 1149ee59b69c2a63ac4170f54c08cf5771e85e26.
+
+  Remove releases to fix state?
+  [#167920648]
+
+  Manually create a release to populate blobstore.
+  [#167920648]
+
+  Finish bumping go.
+  [#167920648]
+
+  Delete dedicated node specs.
+  [#167920648]
+
+  Update blobstore with Redis blobs
+  [#167920648]
+
+  Bump nginx and remove aws cli
+  [#167920648]
+
+  Bump ginkgo and update script to compile ginkgo.
+  [#167920648]
+
+  Bump smoke tests in shared-redis-release.
+  [#167920648]
+
+  Bump golang blob.
+  [#167920648]
+
+  Move blobstore to new bucket
+
+  Bump cf-redis-broker to bump vendored dependencies.
+
+  Bump cf-redis-broker submodule.
+  [#168071557]
+
+  Standardise unit_tests.sh filename
+  [#167942664]
+
+  Merge pull request #6 from pivotal-cf/dependabot/submodules/src/cf-redis-smoke-tests-592e5c8
+  Bump src/cf-redis-smoke-tests from `7e89768` to `592e5c8`
+
+  Merge pull request #5 from pivotal-cf/dependabot/bundler/solargraph-0.37.1
+  Bump solargraph from 0.35.2 to 0.37.1
+
+  Bump src/cf-redis-smoke-tests from `7e89768` to `592e5c8`
+  Bumps [src/cf-redis-smoke-tests](https://github.com/pivotal-cf/cf-redis-smoke-tests) from `7e89768` to `592e5c8`.
+  - [Release notes](https://github.com/pivotal-cf/cf-redis-smoke-tests/releases)
+  - [Commits](https://github.com/pivotal-cf/cf-redis-smoke-tests/compare/7e89768f181bc9a289a6ce3f463f90bac44b9f0a...592e5c85cc71d8894525e6289e2db5939795f6ae)
+
+  Bump solargraph from 0.35.2 to 0.37.1
+  Bumps [solargraph](https://github.com/castwide/solargraph) from 0.35.2 to 0.37.1.
+  - [Release notes](https://github.com/castwide/solargraph/releases)
+  - [Commits](https://github.com/castwide/solargraph/compare/v0.35.2...v0.37.1)
+
+  Change shared-redis release name to shared-redis.
+  [#167706029]
+
+  bosh recreate no longer accepts --force flag.
+  [#167725270]
+
+  Increase timeout for smoke tests.
+  [#167725270]
+
+  Fix typos in spec for metrics.
+  [#167725270]
+
+  Bump cf-redis-smoke-tests
+  [#167802409]
+
+  Update broker metrics spec to look for Prometheus metrics.
+  [#167725270]
+
+  Bump vendored dependencies.
+  Dependabot only updates the Gopkg.lock file, you need to run dep ensure
+  as well.
+  [#167725270]
+
+  Update readme to reflect new location.
+  [#164989097]
+
+  Merge pull request #120 from pivotal-cf/dependabot/bundler/solargraph-0.35.2
+  Bump solargraph from 0.35.1 to 0.35.2
+
+  Bump solargraph from 0.35.1 to 0.35.2
+  Bumps [solargraph](https://github.com/castwide/solargraph) from 0.35.1 to 0.35.2.
+  - [Release notes](https://github.com/castwide/solargraph/releases)
+  - [Commits](https://github.com/castwide/solargraph/compare/v0.35.1...v0.35.2)
+
+  Merge pull request #118 from pivotal-cf/dependabot/bundler/solargraph-0.35.1
+  Bump solargraph from 0.35.0 to 0.35.1
+
+  Bump solargraph from 0.35.0 to 0.35.1
+  Bumps [solargraph](https://github.com/castwide/solargraph) from 0.35.0 to 0.35.1.
+  - [Release notes](https://github.com/castwide/solargraph/releases)
+  - [Commits](https://github.com/castwide/solargraph/compare/v0.35.0...v0.35.1)
