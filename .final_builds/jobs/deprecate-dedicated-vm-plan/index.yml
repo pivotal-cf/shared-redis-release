@@ -1,0 +1,6 @@
+builds:
+  e651295dfc12505a802c79191cd8f2cad467c60ec7a5dc275ede5fb2583e7ccc:
+    version: e651295dfc12505a802c79191cd8f2cad467c60ec7a5dc275ede5fb2583e7ccc
+    blobstore_id: 059468fc-a6f3-4516-6539-7028da8885f1
+    sha1: sha256:803b314797797cf2dcec45f3924b1c5c7de0ddc1fa8dd934e6e7abb52d210028
+format-version: "2"
