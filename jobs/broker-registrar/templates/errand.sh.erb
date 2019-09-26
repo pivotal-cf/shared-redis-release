@@ -5,8 +5,8 @@ set -x
 
 export PATH=$PATH:/var/vcap/packages/cf-cli-6-linux/bin
 
-<% if p("redis.broker.service_instance_limit") == 0 && p("redis.broker.dedicated_node_count") == 0 %>
-    echo "Exiting as there are no shared-vms allowed or dedicated nodes provisioned"
+<% if p("redis.broker.service_instance_limit") == 0 %>
+    echo "Exiting as there are no shared-vms allowed"
     exit 0
 <% end %>
 
@@ -53,10 +53,4 @@ cf disable-service-access $BROKER_SERVICE_NAME
       cf enable-service-access -o <%= org %> $BROKER_SERVICE_NAME
     <% end %>
   <% end %>
-<% end %>
-
-<% if p("redis.broker.enable_deprecate_dedicated_service_access") %>
-  set +e
-  cf disable-service-access $BROKER_SERVICE_NAME -p dedicated-vm
-  set -e
 <% end %>
