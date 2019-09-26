@@ -15,7 +15,7 @@ PACKAGE_DIR=${BOSH_INSTALL_TARGET}/src/${PACKAGE_NAME}
 mkdir -p $(dirname $PACKAGE_DIR)
 cp -a $(basename $PACKAGE_NAME)/ $PACKAGE_DIR
 
-BINARIES=( broker processmonitor agent configmigrator )
+BINARIES=( broker processmonitor configmigrator )
 for BINARY in "${BINARIES[@]}"
 do
   go install ${PACKAGE_NAME}/cmd/${BINARY}
