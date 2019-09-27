@@ -22,9 +22,7 @@ describe 'errands spec' do
             "service_name" => "p-redis-broker",
             "enable_service_access" => true,
             "service_access_orgs" => [],
-            "service_instance_limit" => 1,
-            "dedicated_node_count" => 1,
-            "enable_deprecate_dedicated_service_access" => false
+            "service_instance_limit" => 1
           }
         },
         "broker" => {
