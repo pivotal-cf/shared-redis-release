@@ -21,7 +21,6 @@ module Helpers
     fail 'Must specify SYSLOG_TEST_ENDPOINT environment variable' unless ENV.key?('SYSLOG_TEST_ENDPOINT')
 
     BROKER_JOB_NAME = 'cf-redis-broker'
-    DEDICATED_NODE_JOB_NAME = 'dedicated-node'
     METRICS_JOB_NAME = 'service-metrics'
 
 
