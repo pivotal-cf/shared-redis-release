@@ -1,5 +1,6 @@
 require 'helpers/service_instance'
 require 'helpers/service_broker_api'
+require 'helpers/service_instances'
 
 module Support
   class RedisServiceBroker
@@ -9,10 +10,7 @@ module Support
     end
 
     def service_instances
-      clusters = service_broker.debug.fetch(:allocated).fetch(:clusters)
-      (clusters || []).map { |service_instance|
-        Helpers::ServiceInstance.new(id: service_instance.fetch(:ID))
-      }
+      service_broker.service_instances.instances
     end
 
     def deprovision_shared_service_instances!

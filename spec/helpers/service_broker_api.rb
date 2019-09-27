@@ -24,6 +24,13 @@ module Helpers
       Helpers::Catalog.new(json)
     end
 
+    def service_instances
+      json = http_client.get(url_for('/v2/service_instances'),
+                             auth: { username: username, password: password },
+                             headers: { 'X-Broker-Api-Version': @broker_api_version })
+      Helpers::ServiceInstances.new(json)
+    end
+
     def provision_instance(plan, service_instance_id: SecureRandom.uuid)
       http_provision_instance(
         service_id: plan.service_id,
@@ -60,10 +67,6 @@ module Helpers
         service_id: plan.service_id,
         plan_id: plan.id
       )
-    end
-
-    def debug
-      http_client.get(url_for('/debug'), auth: { username: username, password: password }, headers: { 'X-Broker-Api-Version': @broker_api_version })
     end
 
     private

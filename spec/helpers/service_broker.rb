@@ -33,10 +33,9 @@ module Helpers
       api.catalog.service_plan(service_name, plan_name)
     end
 
-    def debug
-      api.debug
+    def service_instances
+      api.service_instances()
     end
-
 
     private
     attr_reader :api

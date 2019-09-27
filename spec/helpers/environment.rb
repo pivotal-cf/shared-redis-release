@@ -25,7 +25,9 @@ module Helpers
 
 
     def redis_service_broker
-      Support::RedisServiceBroker.new(service_broker, test_manifest['properties']['redis']['broker']['service_name'])
+      instance = bosh.manifest(deployment_name)['instance_groups'].detect { |i| i.fetch('name') == 'cf-redis-broker' }
+      job = instance.fetch('jobs').detect { |j| j.fetch('name') == 'broker-registrar' }
+      Support::RedisServiceBroker.new(service_broker, job.fetch('properties').fetch('redis').fetch('broker').fetch('service_name'))
     end
 
     def service_broker
@@ -50,14 +52,16 @@ module Helpers
           job = @manifest_hash.fetch('instance_groups').detect { |j| j.fetch('name') == 'broker-registrar' }
           if job.nil?
             # for colocated errands, the errand's instance group might not exist
-            @manifest_hash.fetch('properties').fetch('broker')
+            instance = @manifest_hash.fetch('instance_groups').detect { |i| i.fetch('name') == 'cf-redis-broker' }
+            job = instance.fetch('jobs').detect { |j| j.fetch('name') == 'broker-registrar' }
+            job.fetch('properties').fetch('broker')
           else
             job.fetch('properties').fetch('broker')
           end
         end
 
         Helpers::ServiceBroker.new(
-          url: URI::HTTPS.build(host: broker_registrar_properties.fetch('host')),
+          url: URI::HTTPS.build(host: 'api.'+broker_registrar_properties.fetch('host')),
           username: broker_registrar_properties.fetch('username'),
           password: broker_registrar_properties.fetch('password'),
           http_client: Helpers::HttpJsonClient.new,
@@ -139,10 +143,12 @@ module Helpers
     end
 
     def service_client_builder(binding)
+      instance = bosh.manifest(deployment_name)['instance_groups'].detect { |i| i.fetch('name') == 'cf-redis-broker' }
+      job = instance.fetch('jobs').detect { |j| j.fetch('name') == 'cf-redis-broker'}
       Support::RedisServiceClientBuilder.new(
         ssh_gateway: ssh_gateway,
-        save_command: bosh.manifest(deployment_name)['properties']['redis']['save_command'],
-        config_command: bosh.manifest(deployment_name)['properties']['redis']['config_command']
+        save_command: job.fetch('properties').fetch('redis').fetch('save_command'),
+        config_command: job.fetch('properties').fetch('redis').fetch('config_command')
       ).build(binding)
     end
 
