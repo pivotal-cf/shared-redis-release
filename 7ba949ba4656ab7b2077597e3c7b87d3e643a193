@@ -1,0 +1,49 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/168320102
+  * https://www.pivotaltracker.com/story/show/168777221
+
+## Commits
+
+  Delete unnecessary tests and fix broken tests.
+  [#168320102]
+
+  Delete dedicated methods from system test.
+  [#168320102]
+
+  Remove dedicated unit tests.
+  [#168320102]
+
+  Bump cf-redis-broker to remove dedicated.
+  [#168320102]
+
+  Remove agent from packages.
+  [#168320102]
+
+  Remove dedicated specs.
+  [#168320102]
+
+  Remove dedicated from smoke tests.
+  [#168320102]
+
+  Remove dedicated from broker-derigistrar errand.
+  [#168320102]
+
+  Remove dedicated from broker-registrar.
+  [#168320102]
+
+  Delete unused jobs.
+  [#168320102]
+
+  Clean up manifest to move properties to associated jobs.
+  [#168320102]
+
+  Remove dedicated nodes from deployment manifest.
+  [#168320102]
+
+  Bump Redis.
+  [#168777221]
+
+  Bump submodules
+
+  BUmp smoke tests
