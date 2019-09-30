@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require 'helpers/service_broker_api'
+require 'helpers/cf_cli'
 
 module Helpers
   class ServiceBroker
@@ -33,12 +34,12 @@ module Helpers
       api.catalog.service_plan(service_name, plan_name)
     end
 
-    def debug
-      api.debug
+    def catalog
+      api.catalog
     end
 
-
     private
+
     attr_reader :api
   end
 end

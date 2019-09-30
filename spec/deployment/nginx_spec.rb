@@ -1,28 +1,30 @@
 # frozen_string_literal: true
 
 require 'system_spec_helper'
+require 'helpers/environment'
+require 'helpers/bosh2_cli'
 
 def bosh
   Helpers::Bosh2.new
+end
+
+def service_name
+  redis_properties.fetch('broker').fetch('service_name')
 end
 
 describe 'nginx' do
   describe 'configuration' do
     CONFIG_PATH = '/var/vcap/jobs/cf-redis-broker/config/nginx.conf'
 
-    def service_name
-      test_manifest['properties']['redis']['broker']['service_name']
-    end
-
     def service_plan_name
       'shared-vm'
     end
 
     let(:bucket_size) do
-      if test_manifest['properties']['redis']['broker'].dig('nginx', 'bucket_size').nil?
+      if redis_properties['broker'].dig('nginx', 'bucket_size').nil?
         128
       else
-        test_manifest['properties']['redis']['broker'].dig('nginx', 'bucket_size')
+        redis_properties['broker'].dig('nginx', 'bucket_size')
       end
     end
 
@@ -39,7 +41,7 @@ describe 'nginx' do
     it 'has the correct server_names_hash_bucket_size' do
       expect(bucket_size).to be > 0
       command = %(sudo grep "server_names_hash_bucket_size #{bucket_size}" #{CONFIG_PATH})
-      result = bosh.ssh(deployment_name, "#{Helpers::Environment::BROKER_JOB_NAME}/0", command)
+      result = bosh.ssh(deployment_name, "#{Helpers::Environment::BROKER_INSTANCE_NAME}/0", command)
       expect(result.strip).not_to be_empty
     end
   end

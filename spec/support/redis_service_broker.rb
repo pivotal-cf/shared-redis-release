@@ -1,5 +1,13 @@
 require 'helpers/service_instance'
 require 'helpers/service_broker_api'
+require 'helpers/service_instances'
+require 'helpers/environment'
+require 'json'
+
+
+def cf_cli
+  Helpers::Environment::CFCLI.new
+end
 
 module Support
   class RedisServiceBroker
@@ -7,22 +15,6 @@ module Support
       @service_broker = service_broker
       @service_name = service_name
     end
-
-    def service_instances
-      clusters = service_broker.debug.fetch(:allocated).fetch(:clusters)
-      (clusters || []).map { |service_instance|
-        Helpers::ServiceInstance.new(id: service_instance.fetch(:ID))
-      }
-    end
-
-    def deprovision_shared_service_instances!
-      service_instances.each do |service_instance|
-        puts "Found service instance #{service_instance.id.inspect}"
-        service_broker.deprovision_instance(service_instance, service_name, "shared-vm")
-      end
-    end
-
-    private
 
     attr_reader :service_broker, :service_name
   end

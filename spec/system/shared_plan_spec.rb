@@ -10,7 +10,7 @@ end
 
 describe 'shared plan' do
   def service_name
-    test_manifest['properties']['redis']['broker']['service_name']
+    redis_properties.fetch('broker').fetch('service_name')
   end
 
   def service_plan_name
@@ -117,7 +117,7 @@ describe 'shared plan' do
       end
 
       it 'has the correct maxmemory' do
-        maxmemory = test_manifest['properties']['redis']['maxmemory']
+        maxmemory = redis_properties.fetch('maxmemory')
         service_client = service_client_builder(@service_binding)
         expect(service_client.config.fetch('maxmemory').to_i).to eq(maxmemory)
       end
@@ -143,9 +143,21 @@ describe 'shared plan' do
   end
 
   context 'when redis related properties changed in the manifest' do
+    def set_config_command(manifest, command='configalias')
+      manifest['instance_groups'].each do |instance_group|
+        next unless instance_group['name'] == 'cf-redis-broker'
+
+        instance_group['jobs'].each do |job|
+          next unless job['name'] == 'cf-redis-broker'
+
+          job['properties']['redis']['config_command'] = command
+        end
+      end
+    end
+
     before do
       bosh.redeploy(deployment_name) do |manifest|
-        manifest['properties']['redis']['config_command'] = 'configalias'
+        set_config_command(manifest)
       end
 
       @service_instance = service_broker.provision_instance(service_name, service_plan_name)
@@ -158,7 +170,7 @@ describe 'shared plan' do
 
     after do
       bosh.redeploy(deployment_name) do |manifest|
-        manifest['properties']['redis']['config_command'] = 'configalias'
+        set_config_command(manifest)
       end
 
       service_broker.unbind_instance(@service_binding,service_name, service_plan_name)
@@ -167,7 +179,7 @@ describe 'shared plan' do
 
     it 'updates existing instances' do
       bosh.redeploy(deployment_name) do |manifest|
-        manifest['properties']['redis']['config_command'] = 'newconfigalias'
+        set_config_command(manifest, 'newconfigalias')
       end
 
       redis_client2 = service_client_builder(@service_binding)

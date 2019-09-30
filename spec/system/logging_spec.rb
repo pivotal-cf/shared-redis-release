@@ -1,6 +1,12 @@
 require 'logger'
 require 'system_spec_helper'
 require 'rspec/eventually'
+require 'helpers/bosh2_cli'
+require 'helpers/environment'
+
+def bosh
+  Helpers::Bosh2.new
+end
 
 describe 'logging' do
   SYSLOG_FILE = "/var/log/syslog"
@@ -14,9 +20,8 @@ describe 'logging' do
 
     context 'cf-redis-broker' do
       before do
-        bosh.ssh(deployment_name, Helpers::Environment::BROKER_JOB_NAME, "sudo /var/vcap/bosh/bin/monit restart #{Helpers::Environment::BROKER_JOB_NAME}")
-        expect(bosh.wait_for_process_start(deployment_name, Helpers::Environment::BROKER_JOB_NAME, Helpers::Environment::BROKER_JOB_NAME)).to be true
-        expect(bosh.wait_for_process_start(deployment_name, Helpers::Environment::BROKER_JOB_NAME, Helpers::Environment::METRICS_JOB_NAME)).to be true
+        bosh.ssh(deployment_name, Helpers::Environment::BROKER_INSTANCE_NAME, "sudo /var/vcap/bosh/bin/monit restart #{Helpers::Environment::BROKER_JOB_NAME}")
+        expect(bosh.wait_for_process_start(deployment_name, Helpers::Environment::BROKER_INSTANCE_NAME, Helpers::Environment::BROKER_JOB_NAME)).to be true
       end
 
       it 'forwards logs' do
@@ -27,9 +32,8 @@ describe 'logging' do
 
   describe 'redis broker' do
     before(:all) do
-      bosh.ssh(deployment_name, Helpers::Environment::BROKER_JOB_NAME, "sudo /var/vcap/bosh/bin/monit restart #{Helpers::Environment::BROKER_JOB_NAME}")
-      expect(bosh.wait_for_process_start(deployment_name, Helpers::Environment::BROKER_JOB_NAME, Helpers::Environment::BROKER_JOB_NAME)).to be true
-      expect(bosh.wait_for_process_start(deployment_name, Helpers::Environment::BROKER_JOB_NAME, Helpers::Environment::METRICS_JOB_NAME)).to be true
+      bosh.ssh(deployment_name, Helpers::Environment::BROKER_INSTANCE_NAME, "sudo /var/vcap/bosh/bin/monit restart #{Helpers::Environment::BROKER_JOB_NAME}")
+      expect(bosh.wait_for_process_start(deployment_name, Helpers::Environment::BROKER_INSTANCE_NAME, Helpers::Environment::BROKER_JOB_NAME)).to be true
     end
 
     it 'allows log access via bosh' do
@@ -44,7 +48,7 @@ describe 'logging' do
           process-watcher.stdout.log
         ]
 
-      log_paths = bosh.log_files(deployment_name, Helpers::Environment::BROKER_JOB_NAME)
+      log_paths = bosh.log_files(deployment_name, Helpers::Environment::BROKER_INSTANCE_NAME)
       expect(log_paths.map(&:basename).map(&:to_s)).to include(*expected_log_files)
     end
   end

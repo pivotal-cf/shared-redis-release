@@ -1,5 +1,7 @@
 require 'system_spec_helper'
 require 'httparty'
+require 'helpers/environment'
+require 'helpers/bosh2_cli'
 
 RESTORE_BINARY = '/var/vcap/jobs/redis-backups/bin/restore'
 DUMP_FIXTURE_PATH = 'spec/fixtures/moaning-dump.rdb'
@@ -8,6 +10,10 @@ TEMP_COPY_PATH = '/tmp/moaning-dump.rdb'
 
 def bosh
   Helpers::Bosh2.new
+end
+
+def service_name
+  redis_properties.fetch('broker').fetch('service_name')
 end
 
 shared_examples 'it errors when run as non-root user' do |service_plan_name|
@@ -141,8 +147,6 @@ def provision_and_build_service_client(service_plan_name)
 end
 
 def unbind_and_deprovision(service_binding, service_instance, service_plan_name)
-  service_name = test_manifest['properties']['redis']['broker']['service_name']
-
   service_broker.unbind_instance(service_binding, service_name, service_plan_name)
   service_broker.deprovision_instance(service_instance, service_name, service_plan_name)
 end
@@ -159,16 +163,7 @@ def broker_registered?
 end
 
 def broker_available?
-  uri = URI.parse('https://' + test_manifest['properties']['broker']['host'] + '/v2/catalog')
-
-  auth = {
-    username: test_manifest['properties']['broker']['username'],
-    password: test_manifest['properties']['broker']['password']
-  }
-
-  response = HTTParty.get(uri, verify: false, headers: {'X-Broker-API-Version' => '2.13'}, basic_auth: auth)
-
-  response.code == 200
+  service_broker.catalog.service?(service_name)
 end
 
 def get_restore_args(service_plan_name, instance_id, source_rdb)
@@ -182,7 +177,6 @@ def get_restore_args(service_plan_name, instance_id, source_rdb)
 end
 
 def provision_and_bind(service_plan_name)
-  service_name = test_manifest['properties']['redis']['broker']['service_name']
   service_instance = service_broker.provision_instance(service_name, service_plan_name)
   service_binding  = service_broker.bind_instance(service_instance, service_name, service_plan_name)
   [service_instance, service_binding]

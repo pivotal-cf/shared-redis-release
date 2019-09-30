@@ -15,6 +15,11 @@ module Helpers
         services == other.services
     end
 
+    def service?(service_name)
+      service = services.find { |s| s.name == service_name }
+      !service.nil?
+    end
+
     def service(service_name)
       service = services.find { |s| s.name == service_name }
 

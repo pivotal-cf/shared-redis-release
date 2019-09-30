@@ -62,10 +62,6 @@ module Helpers
       )
     end
 
-    def debug
-      http_client.get(url_for('/debug'), auth: { username: username, password: password }, headers: { 'X-Broker-Api-Version': @broker_api_version })
-    end
-
     private
 
     def http_provision_instance(service_instance_id:, service_id:, plan_id:)

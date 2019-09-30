@@ -55,6 +55,11 @@ instance_groups:
       nats: {from: nats, deployment: "((cf_deployment_name))"}
   - name: bpm
     release: bpm
+  - name: redis-backups
+    release: redis-backups
+    properties:
+      redis-backup:
+        enable_bbr: true
   - name: syslog_forwarder
     release: syslog
     properties:
@@ -125,6 +130,8 @@ releases:
   version: ((syslog_version))
 - name: cf-cli
   version: latest
+- name: redis-backups
+  version: ((redis_backups_version))
 
 stemcells:
 - alias: default
