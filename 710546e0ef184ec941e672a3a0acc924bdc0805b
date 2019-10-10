@@ -1,0 +1,12 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/168976596
+  * https://www.pivotaltracker.com/story/show/169059536
+
+## Commits
+
+  Bump submodules
+  [#169059536]
+
+  Bump cf-redis-broker
+  [#168976596]
