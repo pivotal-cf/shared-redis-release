@@ -1,0 +1,20 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/169223082
+  * https://www.pivotaltracker.com/story/show/169312949
+
+## Commits
+
+  Bump golang.
+  [#169312949]
+
+  Merge pull request #16 from pivotal-cf/dependabot/submodules/src/cf-redis-broker-810f559
+  Bump src/cf-redis-broker from `e4b0f63` to `810f559`
+
+  Bump src/cf-redis-broker from `e4b0f63` to `810f559`
+  Bumps [src/cf-redis-broker](https://github.com/pivotal-cf/cf-redis-broker) from `e4b0f63` to `810f559`.
+  - [Release notes](https://github.com/pivotal-cf/cf-redis-broker/releases)
+  - [Commits](https://github.com/pivotal-cf/cf-redis-broker/compare/e4b0f63fafa7edf6868718630152cb67bcad4fba...810f5598b2b48ebe151011e235db05d3182bff2e)
+
+  Bump submodules
+  [#169223082]
