@@ -22,7 +22,7 @@ shared_examples 'ssl validation is configurable' do
   context 'when ssl validation is enabled' do
     it 'does not skip ssl validation' do
       expect(template_out_script).to include("SKIP_SSL_VALIDATION=''")
-      expect(template_out_script).to include("cf api $SKIP_SSL_VALIDATION $CF_API_URL")
+      expect(template_out_script).to include('cf api "$SKIP_SSL_VALIDATION" "$CF_API_URL"')
     end
   end
 
@@ -35,7 +35,7 @@ shared_examples 'ssl validation is configurable' do
 
     it 'skips ssl validation' do
       expect(template_out_script).to include("SKIP_SSL_VALIDATION='--skip-ssl-validation'")
-      expect(template_out_script).to include("cf api $SKIP_SSL_VALIDATION $CF_API_URL")
+      expect(template_out_script).to include('cf api "$SKIP_SSL_VALIDATION" "$CF_API_URL"')
     end
   end
 end
@@ -126,7 +126,7 @@ describe 'cf-redis-broker broker_registrar errand' do
     }
 
     it 'configures sevice access for specified org' do
-      expect(template_out_script).to include('cf enable-service-access "$BROKER_SERVICE_NAME" -o #{org_name} -b "$BROKER_NAME"')
+      expect(template_out_script).to include("cf enable-service-access \"$BROKER_SERVICE_NAME\" -o #{org_name} -b \"$BROKER_NAME\"")
     end
   end
 
@@ -140,8 +140,8 @@ describe 'cf-redis-broker broker_registrar errand' do
     }
 
     it 'configures sevice access for specified orgs' do
-      expect(template_out_script).to include('cf enable-service-access "$BROKER_SERVICE_NAME" -o #{org_1} -b "$BROKER_NAME"')
-      expect(template_out_script).to include('cf enable-service-access "$BROKER_SERVICE_NAME" -o #{org_2} -b "$BROKER_NAME"')
+      expect(template_out_script).to include("cf enable-service-access \"$BROKER_SERVICE_NAME\" -o #{org_1} -b \"$BROKER_NAME\"")
+      expect(template_out_script).to include("cf enable-service-access \"$BROKER_SERVICE_NAME\" -o #{org_2} -b \"$BROKER_NAME\"")
     end
   end
 end
