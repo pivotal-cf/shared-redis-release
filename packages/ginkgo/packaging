@@ -1,4 +1,19 @@
 #!/bin/bash -e
 
-cp -R ginkgo/* ${BOSH_INSTALL_TARGET}
-chmod +x ${BOSH_INSTALL_TARGET}/ginkgo
+GOPATH="$(mktemp -d)"
+export GOPATH
+
+mkdir -p "$GOPATH/src/github.com/onsi/ginkgo"
+tar xfz ginkgo/ginkgo-1.10.2.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/onsi/ginkgo/"
+
+mkdir -p "$GOPATH/src/github.com/hpcloud/tail"
+tar xzf ginkgo/tail-1.0.0.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/hpcloud/tail"
+
+export PATH="${PATH}:/var/vcap/packages/go/bin"
+export GOCACHE=/tmp/gocache
+
+pushd "$GOPATH"
+    go build -o "$BOSH_INSTALL_TARGET/ginkgo" github.com/onsi/ginkgo/ginkgo
+popd
+
+rm -rf "$GOPATH"

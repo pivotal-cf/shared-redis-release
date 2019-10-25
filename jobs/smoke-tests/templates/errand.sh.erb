@@ -6,30 +6,30 @@ set -e
     exit 0
 <% end %>
 
-export GOROOT=$(readlink -nf /var/vcap/packages/go)
-export PATH=${GOROOT}/bin:${PATH}
+export GOROOT="$(readlink -nf /var/vcap/packages/go)"
+export PATH="${GOROOT}/bin:${PATH}"
 
 export GOPATH=/var/vcap/packages/cf-redis-smoke-tests
-export PATH=${GOPATH}/bin:${PATH}
+export PATH="${GOPATH}/bin:${PATH}"
 
 export GOCACHE=/tmp/gocache
 
 
-export PATH=$PATH:/var/vcap/packages/cf-cli-6-linux/bin
+export PATH="$PATH:/var/vcap/packages/cf-cli-6-linux/bin"
 
-export API_URL=$(grep -Po '"api": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')
+export API_URL="$(grep -Po '"api": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')"
 export ADMIN_NAME=admin
-export ADMIN_PASSWORD=$(grep -Po '"admin_password": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')
+export ADMIN_PASSWORD="$(grep -Po '"admin_password": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')"
 
-cf api $API_URL --skip-ssl-validation
+cf api "$API_URL" --skip-ssl-validation
 
 if [ -z $ADMIN_PASSWORD ]
     then
-        export ADMIN_NAME=$(grep -Po '"admin_client": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')
-        export ADMIN_PASSWORD=$(grep -Po '"admin_client_secret": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')
-        cf auth $ADMIN_NAME $ADMIN_PASSWORD --client-credentials
+        export ADMIN_NAME="$(grep -Po '"admin_client": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')"
+        export ADMIN_PASSWORD="$(grep -Po '"admin_client_secret": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')"
+        cf auth "$ADMIN_NAME" "$ADMIN_PASSWORD" --client-credentials
 else
-    cf auth $ADMIN_NAME $ADMIN_PASSWORD
+    cf auth "$ADMIN_NAME" "$ADMIN_PASSWORD"
 fi
 
 cf create-org system

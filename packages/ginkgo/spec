@@ -1,5 +1,13 @@
 ---
 name: ginkgo
+metadata:
+  version:
+    ginkgo: '1.10.2'
+    tail: '1.0.0'
+
+dependencies:
+- go
 
 files:
-  - ginkgo/ginkgo
+- ginkgo/ginkgo-1.10.2.tar.gz
+- ginkgo/tail-1.0.0.tar.gz
