@@ -31,5 +31,5 @@ CF_DIAL_TIMEOUT=30
 BROKER_NAME='<%= p("broker.name") %>'
 BROKER_SERVICE_NAME='<%= p("redis.broker.service_name") %>'
 
-cf purge-service-offering -f $BROKER_SERVICE_NAME
+cf purge-service-offering -b "${BROKER_NAME}" -f $BROKER_SERVICE_NAME
 cf delete-service-broker -f $BROKER_NAME
