@@ -3,7 +3,7 @@
 set -e
 set -x
 
-export PATH=$PATH:/var/vcap/packages/cf-cli-6-linux/bin
+export PATH="$PATH:/var/vcap/packages/cf-cli-6-linux/bin"
 
 <% if p("redis.broker.service_instance_limit") == 0 %>
     echo "Exiting as there are no shared-vms allowed"
@@ -15,7 +15,7 @@ CF_API_URL='<%= p("cf.api_url") %>'
 SKIP_SSL_VALIDATION='<%= p("cf.skip_ssl_validation") ? "--skip-ssl-validation" : "" %>'
 
 cf --version
-cf api $SKIP_SSL_VALIDATION $CF_API_URL
+cf api "$SKIP_SSL_VALIDATION" "$CF_API_URL"
 
 set +x
 <% if p("cf.admin_client") != "" && p("cf.admin_client_secret") != "" %>
@@ -39,18 +39,18 @@ BROKER_PASSWORD='<%= p("broker.password") %>'
 set -x
 
 set +x
-cf create-service-broker $BROKER_NAME $BROKER_USERNAME $BROKER_PASSWORD $BROKER_URL || cf update-service-broker $BROKER_NAME $BROKER_USERNAME $BROKER_PASSWORD $BROKER_URL
+cf create-service-broker "$BROKER_NAME" "$BROKER_USERNAME" "$BROKER_PASSWORD" "$BROKER_URL" || cf update-service-broker "$BROKER_NAME" "$BROKER_USERNAME" "$BROKER_PASSWORD" "$BROKER_URL"
 set -x
 
 # disable-service-access must happen in order to reset service-access. You can then reconfigure access accordingly.
-cf disable-service-access -b "${BROKER_NAME}" $BROKER_SERVICE_NAME
+cf disable-service-access "$BROKER_SERVICE_NAME" -b "$BROKER_NAME"
 
 <% if p("redis.broker.enable_service_access") %>
   <% if p("redis.broker.service_access_orgs").empty? %>
-    cf enable-service-access -b "${BROKER_NAME}" $BROKER_SERVICE_NAME
+    cf enable-service-access "$BROKER_SERVICE_NAME" -b "$BROKER_NAME"
   <% else %>
     <% p("redis.broker.service_access_orgs").each do |org| %>
-      cf enable-service-access -o <%= org %> -b "${BROKER_NAME}" $BROKER_SERVICE_NAME
+      cf enable-service-access "$BROKER_SERVICE_NAME" -o <%= org %> -b "$BROKER_NAME"
     <% end %>
   <% end %>
 <% end %>

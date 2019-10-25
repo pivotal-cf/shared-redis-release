@@ -3,7 +3,7 @@
 set -e
 set -x
 
-export PATH=$PATH:/var/vcap/packages/cf-cli-6-linux/bin
+export PATH="$PATH:/var/vcap/packages/cf-cli-6-linux/bin"
 
 <% if p("redis.broker.service_instance_limit") == 0 %>
     echo "Exiting as there are no shared-vms allowed"
@@ -14,7 +14,7 @@ CF_API_URL='<%= p("cf.api_url") %>'
 SKIP_SSL_VALIDATION='<%= p("cf.skip_ssl_validation") ? "--skip-ssl-validation" : "" %>'
 
 cf --version
-cf api $SKIP_SSL_VALIDATION $CF_API_URL
+cf api "$SKIP_SSL_VALIDATION" "$CF_API_URL"
 
 set +x
 <% if p("cf.admin_client") != "" && p("cf.admin_client_secret") != "" %>
@@ -31,5 +31,5 @@ CF_DIAL_TIMEOUT=30
 BROKER_NAME='<%= p("broker.name") %>'
 BROKER_SERVICE_NAME='<%= p("redis.broker.service_name") %>'
 
-cf purge-service-offering -b "${BROKER_NAME}" -f $BROKER_SERVICE_NAME
-cf delete-service-broker -f $BROKER_NAME
+cf purge-service-offering "$BROKER_SERVICE_NAME" -b "$BROKER_NAME" -f
+cf delete-service-broker "$BROKER_NAME" -f
