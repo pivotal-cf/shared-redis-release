@@ -113,7 +113,7 @@ describe 'cf-redis-broker broker_registrar errand' do
 
   context 'when no service orgs are provided' do
     it 'configures sevice access for all' do
-      expect(template_out_script).to include("cf enable-service-access $BROKER_SERVICE_NAME")
+      expect(template_out_script).to include('cf enable-service-access "$BROKER_SERVICE_NAME" -b "$BROKER_NAME"')
     end
   end
 
@@ -126,7 +126,7 @@ describe 'cf-redis-broker broker_registrar errand' do
     }
 
     it 'configures sevice access for specified org' do
-      expect(template_out_script).to include("cf enable-service-access -o #{org_name} $BROKER_SERVICE_NAME")
+      expect(template_out_script).to include('cf enable-service-access "$BROKER_SERVICE_NAME" -o #{org_name} -b "$BROKER_NAME"')
     end
   end
 
@@ -140,8 +140,8 @@ describe 'cf-redis-broker broker_registrar errand' do
     }
 
     it 'configures sevice access for specified orgs' do
-      expect(template_out_script).to include("cf enable-service-access -o #{org_1} $BROKER_SERVICE_NAME")
-      expect(template_out_script).to include("cf enable-service-access -o #{org_2} $BROKER_SERVICE_NAME")
+      expect(template_out_script).to include('cf enable-service-access "$BROKER_SERVICE_NAME" -o #{org_1} -b "$BROKER_NAME"')
+      expect(template_out_script).to include('cf enable-service-access "$BROKER_SERVICE_NAME" -o #{org_2} -b "$BROKER_NAME"')
     end
   end
 end
