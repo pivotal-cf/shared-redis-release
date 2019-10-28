@@ -1,0 +1,51 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/169203643
+  * https://www.pivotaltracker.com/story/show/169340807
+
+## Commits
+
+  Bump solargraph from 0.37.1 to 0.37.2
+  Bumps [solargraph](https://github.com/castwide/solargraph) from 0.37.1 to 0.37.2.
+  - [Release notes](https://github.com/castwide/solargraph/releases)
+  - [Commits](https://github.com/castwide/solargraph/compare/v0.37.1...v0.37.2)
+
+  Bump httparty from 0.17.0 to 0.17.1
+  Bumps [httparty](https://github.com/jnunemaker/httparty) from 0.17.0 to 0.17.1.
+  - [Release notes](https://github.com/jnunemaker/httparty/releases)
+  - [Changelog](https://github.com/jnunemaker/httparty/blob/master/Changelog.md)
+  - [Commits](https://github.com/jnunemaker/httparty/compare/v0.17.0...v0.17.1)
+
+  Bump rspec from 3.8.0 to 3.9.0
+  Bumps [rspec](https://github.com/rspec/rspec) from 3.8.0 to 3.9.0.
+  - [Release notes](https://github.com/rspec/rspec/releases)
+  - [Commits](https://github.com/rspec/rspec/compare/v3.8.0...v3.9.0)
+
+  Merge pull request #11 from pivotal-cf/dependabot/bundler/rake-13.0.0
+  Bump rake from 12.3.3 to 13.0.0
+
+  Fix the unit tests a bit more.
+  [#169203643]
+
+  Fix tests to match new templating code.
+  [#169203643]
+
+  Clean up bash and put args in standard order.
+  [#169203643]
+
+  Merge pull request #15 from hfrenzel/master
+  Handle specific broker on service registration/deregistration
+
+  Remove unused compilation script.
+  [#169340807]
+
+  Use BOSH to compile ginkgo.
+  [#169340807]
+
+  Handle specific broker on service registration/deregistration (Fixes: #14)
+
+  Bump rake from 12.3.3 to 13.0.0
+  Bumps [rake](https://github.com/ruby/rake) from 12.3.3 to 13.0.0.
+  - [Release notes](https://github.com/ruby/rake/releases)
+  - [Changelog](https://github.com/ruby/rake/blob/master/History.rdoc)
+  - [Commits](https://github.com/ruby/rake/compare/v12.3.3...v13.0.0)
