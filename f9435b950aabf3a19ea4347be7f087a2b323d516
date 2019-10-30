@@ -1,0 +1,14 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/169416082
+
+## Commits
+
+  More bash templating test fixes.
+  [#169416082]
+
+  Change tests to match bash.
+  [#169416082]
+
+  Change quoting on bosh variable in errand to fix cf api error.
+  [#169416082]
