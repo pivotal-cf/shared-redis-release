@@ -21,4 +21,6 @@ builds:
     version: 436.0.5
   a85b2c58-3ea8-423a-446f-18d033a62931:
     version: 436.0.1
+  cc5665ef-835d-4039-64c0-6a3a9423ee5b:
+    version: 436.1.1
 format-version: "2"
