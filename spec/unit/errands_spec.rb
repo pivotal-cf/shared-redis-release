@@ -61,7 +61,7 @@ describe 'errands spec' do
       it 'skips certificate verification if configured to do so' do
         manifest['properties']['cf'].merge!({skip_ssl_validation: true})
 
-        expect(File.read(rendered_template_file)).to include("SKIP_SSL_VALIDATION='--skip-ssl-validation'")
+        expect(File.read(rendered_template_file)).to include("SKIP_SSL_VALIDATION=--skip-ssl-validation")
       end
     end
 
@@ -69,7 +69,7 @@ describe 'errands spec' do
       it 'does not skip certificate verification' do
         manifest['properties']['cf'].merge!({skip_ssl_validation: false})
 
-        expect(File.read(rendered_template_file)).to include("SKIP_SSL_VALIDATION=''")
+        expect(File.read(rendered_template_file)).to include("SKIP_SSL_VALIDATION=")
       end
     end
   end
