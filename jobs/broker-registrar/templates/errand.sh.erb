@@ -12,10 +12,10 @@ export PATH="$PATH:/var/vcap/packages/cf-cli-6-linux/bin"
 
 
 CF_API_URL='<%= p("cf.api_url") %>'
-SKIP_SSL_VALIDATION=<%= p("cf.skip_ssl_validation") ? "--skip-ssl-validation" : "" %>
+SKIP_SSL_VALIDATION='<%= p("cf.skip_ssl_validation") ? "--skip-ssl-validation" : "" %>'
 
 cf --version
-cf api "$SKIP_SSL_VALIDATION" "$CF_API_URL"
+cf api $SKIP_SSL_VALIDATION "$CF_API_URL"
 
 set +x
 <% if p("cf.admin_client") != "" && p("cf.admin_client_secret") != "" %>
