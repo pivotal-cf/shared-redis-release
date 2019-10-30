@@ -21,7 +21,7 @@ PROPERTIES = {
 shared_examples 'ssl validation is configurable' do
   context 'when ssl validation is enabled' do
     it 'does not skip ssl validation' do
-      expect(template_out_script).to include("SKIP_SSL_VALIDATION=''")
+      expect(template_out_script).to include("SKIP_SSL_VALIDATION=")
       expect(template_out_script).to include('cf api "$SKIP_SSL_VALIDATION" "$CF_API_URL"')
     end
   end
@@ -34,7 +34,7 @@ shared_examples 'ssl validation is configurable' do
     }
 
     it 'skips ssl validation' do
-      expect(template_out_script).to include("SKIP_SSL_VALIDATION='--skip-ssl-validation'")
+      expect(template_out_script).to include("SKIP_SSL_VALIDATION=--skip-ssl-validation")
       expect(template_out_script).to include('cf api "$SKIP_SSL_VALIDATION" "$CF_API_URL"')
     end
   end
