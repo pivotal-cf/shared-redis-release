@@ -37,4 +37,4 @@ cf create-space pivotal-services -o system
 
 
 cd /var/vcap/packages/cf-redis-smoke-tests/src/github.com/pivotal-cf/cf-redis-smoke-tests
-CGO_ENABLED=0 GO111MODULE=off CONFIG_PATH=/var/vcap/jobs/smoke-tests/config.json /var/vcap/packages/ginkgo/ginkgo -r -p -nodes=2
+GOFLAGS="-mod=vendor" CGO_ENABLED=0 GO111MODULE=on CONFIG_PATH=/var/vcap/jobs/smoke-tests/config.json /var/vcap/packages/ginkgo/ginkgo -r -p -nodes=2
