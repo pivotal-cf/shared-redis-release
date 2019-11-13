@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-GOROOT=$(readlink -nf /var/vcap/packages/go)
-export GOROOT
+source /var/vcap/packages/golang-1-linux/bosh/compile.env
+
 export PATH=$GOROOT/bin:$PATH
 
 export GOPATH=$GOPATH:$BOSH_INSTALL_TARGET

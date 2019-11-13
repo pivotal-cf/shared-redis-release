@@ -6,7 +6,8 @@ set -e
     exit 0
 <% end %>
 
-export GOROOT="$(readlink -nf /var/vcap/packages/go)"
+source /var/vcap/packages/golang-1-linux/bosh/compile.env
+
 export PATH="${GOROOT}/bin:${PATH}"
 
 export GOPATH=/var/vcap/packages/cf-redis-smoke-tests

@@ -6,7 +6,7 @@ metadata:
     tail: '1.0.0'
 
 dependencies:
-- go
+- golang-1-linux
 
 files:
 - ginkgo/ginkgo-1.10.2.tar.gz
