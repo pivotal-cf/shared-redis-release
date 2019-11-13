@@ -6,3 +6,5 @@ dependencies:
 
 files:
 - cf-redis-broker/**/*.go
+- cf-redis-broker/go.mod
+- cf-redis-broker/go.sum
