@@ -1,0 +1,38 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/169684055
+  * https://www.pivotaltracker.com/story/show/169726806
+
+## Commits
+
+  Update BOSH vendored package golang-1-linux
+
+  Fix cf-redis-broker packaging script.
+  [#169726806]
+
+  Clean up packaging scripts in shared-redis-release.
+  [#169726806]
+
+  Move to vendored golang
+  [#169726806]
+
+  Amend smoke test errand to run with go modules
+  [#169684055]
+
+  Bump submodules and amend spec to include go mod and sum.
+  [#169684055]
+
+  Bump submodule dependabot config changes.
+  [#169684055]
+
+  Bump submodules to use go-modules
+  [#169684055]
+
+  Merge pull request #17 from pivotal-cf/dependabot/bundler/rake-13.0.1
+  Bump rake from 13.0.0 to 13.0.1
+
+  Bump rake from 13.0.0 to 13.0.1
+  Bumps [rake](https://github.com/ruby/rake) from 13.0.0 to 13.0.1.
+  - [Release notes](https://github.com/ruby/rake/releases)
+  - [Changelog](https://github.com/ruby/rake/blob/master/History.rdoc)
+  - [Commits](https://github.com/ruby/rake/compare/v13.0.0...v13.0.1)
