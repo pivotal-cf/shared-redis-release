@@ -3,23 +3,12 @@ set -e
 
 source /var/vcap/packages/golang-1-linux/bosh/compile.env
 
-export PATH=$GOROOT/bin:$PATH
+mkdir -p "$BOSH_INSTALL_TARGET/bin"
 
-export GOPATH=$GOPATH:$BOSH_INSTALL_TARGET
-
-export GOCACHE=/tmp/gocache
-
-PACKAGE_NAME=github.com/pivotal-cf/cf-redis-broker
-PACKAGE_DIR=${BOSH_INSTALL_TARGET}/src/${PACKAGE_NAME}
-
-mkdir -p $(dirname $PACKAGE_DIR)
-cp -a $(basename $PACKAGE_NAME)/ $PACKAGE_DIR
-
-BINARIES=( broker processmonitor configmigrator )
-for BINARY in "${BINARIES[@]}"
-do
-  go install ${PACKAGE_NAME}/cmd/${BINARY}
-done
-
-# clean up source artifacts
-rm -rf ${BOSH_INSTALL_TARGET}/src ${BOSH_INSTALL_TARGET}/pkg
+pushd cf-redis-broker
+    BINARIES=( broker processmonitor configmigrator )
+    for BINARY in "${BINARIES[@]}"
+    do
+        GOFLAGS="-mod=vendor" GO111MODULE=on go build -o "$BOSH_INSTALL_TARGET/bin/$BINARY" "cmd/$BINARY"
+    done
+popd
