@@ -1,0 +1,22 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/163790583
+
+## Commits
+
+  Update BOSH blob nginx
+
+  Update BOSH blob redis
+
+  Simplify shared-redis packaging to work with auto-bumping.
+  [#163790583]
+
+  Update BOSH blob ginkgo
+
+  Merge pull request #21 from pivotal-cf/dependabot/bundler/solargraph-0.38.0
+  Bump solargraph from 0.37.2 to 0.38.0
+
+  Bump solargraph from 0.37.2 to 0.38.0
+  Bumps [solargraph](https://github.com/castwide/solargraph) from 0.37.2 to 0.38.0.
+  - [Release notes](https://github.com/castwide/solargraph/releases)
+  - [Commits](https://github.com/castwide/solargraph/compare/v0.37.2...v0.38.0)
