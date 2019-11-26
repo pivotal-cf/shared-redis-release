@@ -12,5 +12,5 @@ nginx/nginx-1.16.1.tar.gz:
   sha: sha256:f11c2a6dd1d3515736f0324857957db2de98be862461b5a542a3ac6188dbe32b
 redis/redis-5.0.7.tar.gz:
   size: 1984203
-  object_id: 8bd3ade7-3974-45e2-7d42-a255df01a532
+  object_id: c7ff9bcb-c16f-4472-674b-bde40d0e5154
   sha: sha256:61db74eabf6801f057fd24b590232f2f337d422280fd19486eca03be87d3a82b
