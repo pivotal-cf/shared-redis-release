@@ -1,11 +1,10 @@
 #!/bin/bash
 set -e
 
-NGINX_VERSION=1.16.1
-
+build_dir="$(mktemp -d)"
 
 echo "Extracting nginx..."
-tar xzvf nginx/nginx-$NGINX_VERSION.tar.gz
+tar xzvf nginx/nginx-*.tar.gz --strip-components=1 -C "$build_dir"
 
 if [[ $? != 0 ]] ; then
   echo "Failed extracting nginx"
@@ -13,11 +12,12 @@ if [[ $? != 0 ]] ; then
 fi
 
 echo "Building nginx..."
-cd nginx-$NGINX_VERSION
-./configure \
-  --prefix=${BOSH_INSTALL_TARGET} \
-  --with-http_ssl_module \
-  --without-http_rewrite_module
+pushd "$build_dir"
+  ./configure \
+    --prefix=${BOSH_INSTALL_TARGET} \
+    --with-http_ssl_module \
+    --without-http_rewrite_module
 
-make
-make install
+  make
+  make install
+popd
