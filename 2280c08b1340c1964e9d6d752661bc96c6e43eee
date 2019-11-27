@@ -1,0 +1,9 @@
+## Stories
+
+  * https://www.pivotaltracker.com/story/show/169979165
+
+## Commits
+
+  Remove redis-backups from open source release manifest.
+  Resolves #22
+  [#169979165]
