@@ -1,6 +1,8 @@
 builds:
   02d58033-2750-4738-7353-7ef0170590ef:
     version: 436.0.0
+  254a28cb-b949-47ec-783e-63cd2831851c:
+    version: 437.0.4
   407aed40-198b-4eda-4bee-6eb3015bce37:
     version: 436.0.2
   4aa456b3-0154-4cfb-5df3-fd4b238c2fd7:
