@@ -51,4 +51,6 @@ builds:
     version: 436.1.2
   de87bf7c-1084-478e-582b-96dba8327b81:
     version: 437.0.1
+  e7d264f2-2674-4f2a-578f-4065753b7e99:
+    version: 437.0.12
 format-version: "2"
