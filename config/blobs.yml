@@ -1,7 +1,7 @@
-ginkgo/ginkgo-1.12.0.tar.gz:
-  size: 138578
-  object_id: ccc89d14-7efd-4835-482e-f1739ab282a8
-  sha: sha256:49da9c5b71b76320d2b5640b3fe29fd72fa97e994e5c7a5f06e5c25bce7334c2
+ginkgo/ginkgo-1.12.1.tar.gz:
+  size: 139879
+  object_id: de2e6e45-c317-4b5a-53e1-ddb9c369b3a4
+  sha: sha256:8fbc07272ee58ef50fa44093c1de831782724e1180d08dd7b7a775d2df700900
 ginkgo/tail-1.0.0.tar.gz:
   size: 37816
   object_id: c5ab9132-f579-4481-4858-6a09fd54221c
