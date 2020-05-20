@@ -6,6 +6,10 @@ ginkgo/tail-1.0.0.tar.gz:
   size: 37816
   object_id: c5ab9132-f579-4481-4858-6a09fd54221c
   sha: sha256:3aa982c4a779b1c1dc5723bbf2345eed1dd46cd5bcc490e69de4beab8f5d4b02
+ginkgo/tail-1.4.4.tar.gz:
+  size: 2700307
+  object_id: 53d8f13f-34ac-44b0-6301-00f83a8855c6
+  sha: sha256:5be48a045f6aca5cd78d610d794c3b48ce8018319dd71749e57e9c5b86708393
 nginx/nginx-1.16.1.tar.gz:
   size: 1032630
   object_id: c3cc8aa2-d5db-4e79-4c84-94129437f767
