@@ -3,11 +3,13 @@ name: ginkgo
 metadata:
   version:
     ginkgo: '1.12.2'
-    tail: '1.0.0'
+    tail-nxadm: '1.4.4'
+    golang-sys: '1.13'
 
 dependencies:
 - golang-1-linux
 
 files:
 - ginkgo/ginkgo-1.12.2.tar.gz
-- ginkgo/tail-1.0.0.tar.gz
+- ginkgo/tail-nxadm-1.4.4.tar.gz
+- ginkgo/golang-sys-1.13.tar.gz

@@ -8,8 +8,11 @@ export GOPATH
 mkdir -p "$GOPATH/src/github.com/onsi/ginkgo"
 tar xfz ginkgo/ginkgo-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/onsi/ginkgo/"
 
-mkdir -p "$GOPATH/src/github.com/hpcloud/tail"
-tar xzf ginkgo/tail-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/hpcloud/tail"
+mkdir -p "$GOPATH/src/github.com/nxadm/tail"
+tar xzf ginkgo/tail-nxadm-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/nxadm/tail"
+
+mkdir -p "$GOPATH/src/golang.org/x/sys"
+tar xzf ginkgo/golang-sys-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.org/x/sys"
 
 pushd "$GOPATH"
     go build -o "$BOSH_INSTALL_TARGET/ginkgo" github.com/onsi/ginkgo/ginkgo
