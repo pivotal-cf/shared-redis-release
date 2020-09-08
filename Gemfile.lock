@@ -935,7 +935,7 @@ GEM
       pry (~> 0.13.0)
     rainbow (3.0.0)
     rake (13.0.1)
-    redis (4.2.1)
+    redis (4.2.2)
     regexp_parser (1.7.1)
     reverse_markdown (2.0.0)
       nokogiri
@@ -1005,7 +1005,7 @@ DEPENDENCIES
   pry
   pry-byebug
   rake
-  redis (= 4.2.1)
+  redis (= 4.2.2)
   rspec
   rspec-eventually
   rspec-instafail
