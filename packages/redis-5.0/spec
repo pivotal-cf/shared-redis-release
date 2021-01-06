@@ -2,7 +2,7 @@
 name: redis-5.0
 metadata:
   version:
-    redis: '5.0.9'
+    redis: '5.0.10'
 
 files:
-  - redis/redis-5.0.9.tar.gz
+  - redis/redis-5.0.10.tar.gz
