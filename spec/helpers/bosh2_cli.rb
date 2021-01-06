@@ -17,7 +17,7 @@ module Helpers
 
     def initialize
       @bosh_cli = "#{BOSH_CLI} -n"
-      @ssh_gw_args = "--gw-user=#{ENV.fetch('JUMPBOX_USERNAME')} --gw-host=#{ENV.fetch('JUMPBOX_HOST')} --gw-private-key=#{ENV.fetch('JUMPBOX_PRIVATE_KEY_PATH')}"
+      @ssh_gw_args = "--gw-socks5=#{ENV.fetch('BOSH_ALL_PROXY')} --gw-user=#{ENV.fetch('JUMPBOX_USERNAME')} --gw-host=#{ENV.fetch('JUMPBOX_HOST')} --gw-private-key=#{ENV.fetch('JUMPBOX_PRIVATE_KEY_PATH')}"
 
       version = execute_successfully("#{@bosh_cli} --version")
       raise 'BOSH CLI >= v2 required' if version.start_with?('version 1.')
