@@ -7,9 +7,9 @@ ginkgo/golang-sys-1.13.tar.gz:
   object_id: d1316a99-38a7-49e5-710f-6439956e0fac
   sha: sha256:27f0650ed37764bc5c456a229bfd15eb43fbd1f36e26bcc208fe2f550aca8642
 ginkgo/tail-nxadm-1.4.4.tar.gz:
-  size: 2707301
-  object_id: 42f3812f-bd52-46ca-58b5-62ad691daf2b
-  sha: sha256:099fe36b9e4df65feeaf15e1172ebcebcd7b8f2ccd76800050b04387e2653331
+  size: 3889601
+  object_id: 58d52a2f-e4f8-4c41-7416-f5c878beecbd
+  sha: sha256:8822781bc57f805d798153fb7bae9b1a94be57b1bc01b19933c9ab4278eb5d24
 nginx/nginx-1.16.1.tar.gz:
   size: 1032630
   object_id: 9f750b18-e0eb-4cf6-4c72-e23d8c2f4a88
