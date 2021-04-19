@@ -1,4 +1,5 @@
 #!/bin/bash -e
+set -eux
 
 source /var/vcap/packages/golang-1-linux/bosh/compile.env
 
@@ -11,11 +12,17 @@ tar xfz ginkgo/ginkgo-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/o
 mkdir -p "$GOPATH/src/github.com/nxadm/tail"
 tar xzf ginkgo/tail-nxadm-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/nxadm/tail"
 
+mkdir -p "$GOPATH/src/github.com/go-task/slim-sprig"
+tar zxvf ginkgo/slim-sprig-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/go-task/slim-sprig"
+
 mkdir -p "$GOPATH/src/golang.org/x/sys"
 tar xzf ginkgo/golang-sys-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.org/x/sys"
 
+mkdir -p "$GOPATH/src/golang.org/x/tools"
+tar zxvf ginkgo/golang-tools-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.org/x/tools"
+
 pushd "$GOPATH"
-    go build -o "$BOSH_INSTALL_TARGET/ginkgo" github.com/onsi/ginkgo/ginkgo
+    GO111MODULE=auto go build -o "$BOSH_INSTALL_TARGET/ginkgo" github.com/onsi/ginkgo/ginkgo
 popd
 
 rm -rf "$GOPATH"

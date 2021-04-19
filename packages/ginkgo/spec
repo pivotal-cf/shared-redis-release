@@ -4,7 +4,9 @@ metadata:
   version:
     ginkgo: '1.16.1'
     tail-nxadm: '1.4.4'
+    slim-sprig: '2.20.0'
     golang-sys: '1.13'
+    golang-tools: '0.1.0'
 
 dependencies:
 - golang-1-linux
@@ -12,4 +14,6 @@ dependencies:
 files:
 - ginkgo/ginkgo-1.16.1.tar.gz
 - ginkgo/tail-nxadm-1.4.4.tar.gz
+- ginkgo/slim-sprig-2.20.0.tar.gz
 - ginkgo/golang-sys-1.13.tar.gz
+- ginkgo/golang-tools-0.1.0.tar.gz
