@@ -6,6 +6,10 @@ ginkgo/golang-sys-1.13.tar.gz:
   size: 1437608
   object_id: bf010f03-2536-4825-53b9-3f082cf540ee
   sha: sha256:a2373a1fc358bfca1d94d9399cecf4b461ce9d96149ec0f6cea2108505e32ac4
+ginkgo/slim-sprig-2.20.0.tar.gz:
+  size: 689726
+  object_id: 1ada5137-ba50-43b5-58e5-8fd553382173
+  sha: sha256:5de93263a0b97ac546bae422b04ac9da2b0c8cbc182c068bd621f26153cc535b
 ginkgo/tail-nxadm-1.4.4.tar.gz:
   size: 3889601
   object_id: 58d52a2f-e4f8-4c41-7416-f5c878beecbd
