@@ -130,9 +130,7 @@ This enables the service plans on the CF Marketplace so that App Developers can 
 ### broker-deregistrar
 Communicates with the CF Cloud Controller to remove the cf-redis broker and service plans from the CF Marketplace
 as well as [delete the broker deployment](https://cli.cloudfoundry.org/en-US/cf/delete-service-broker.html) from BOSH.
-
 **Note:** If any service instances exist, the errand will **fail**. This is to prevent orphan deployments which the CF Cloud Controller will lose record of but will continue to live as a BOSH deployment which would continue to incur costs.
-
 If you wish to remove the service broker, perform a
 `cf delete-service SERVICE_INSTANCE` and remove all service instances associated with the broker and run the errand after all service instances have been removed.
 
