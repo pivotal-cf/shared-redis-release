@@ -139,3 +139,5 @@ If you wish to remove the service broker, perform a
 ### smoke-tests
 Runs smoke tests which tests the lifecycle and functionality of the both the dedicated-vm and shared-vm services.
 See the [Redis documentation](https://docs.pivotal.io/redis/smoke-tests.html) for more information.
+
+The CI pipeline for this Repo lives here: https://runway-ci.eng.vmware.com/teams/tanzu-redis/pipelines/shared-redis
