@@ -1145,7 +1145,7 @@ GEM
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
     semi_semantic (1.2.0)
-    solargraph (0.43.2)
+    solargraph (0.44.0)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
