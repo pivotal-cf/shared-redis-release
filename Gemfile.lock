@@ -1107,7 +1107,7 @@ GEM
       pry (~> 0.13.0)
     racc (1.5.2)
     rainbow (3.0.0)
-    rake (13.0.3)
+    rake (13.0.6)
     redis (4.4.0)
     regexp_parser (2.1.1)
     reverse_markdown (2.0.0)
