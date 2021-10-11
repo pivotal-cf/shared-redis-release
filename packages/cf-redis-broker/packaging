@@ -9,6 +9,6 @@ pushd cf-redis-broker
     BINARIES=( broker processmonitor configmigrator )
     for BINARY in "${BINARIES[@]}"
     do
-        GOFLAGS="-mod=vendor" GO111MODULE=on go build -o "$BOSH_INSTALL_TARGET/bin/$BINARY" "./cmd/$BINARY"
+        go build -o "$BOSH_INSTALL_TARGET/bin/$BINARY" "./cmd/$BINARY"
     done
 popd

@@ -2,5 +2,3 @@
 name: cf-redis-smoke-tests
 files:
 - cf-redis-smoke-tests/**/*
-- cf-redis-smoke-tests/go.mod
-- cf-redis-smoke-tests/go.sum
