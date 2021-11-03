@@ -62,6 +62,8 @@ properties:
     description: The maximum memory (in bytes) that Redis will use before evicting old data
   redis.config_command:
     description: The name of the obfuscated redis CONFIG command.
+  redis.acl_command:
+    description: The name of the obfuscated redis ACL command.
   redis.save_command:
     default: ""
     description: The name of the obfuscated redis SAVE command.

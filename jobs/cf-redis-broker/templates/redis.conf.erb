@@ -702,3 +702,8 @@ rename-command MONITOR ""
 rename-command SHUTDOWN ""
 rename-command SLAVEOF ""
 rename-command SYNC ""
+
+<% redis_major_version = p('redis.version').split('.')[0].to_i %>
+<% if redis_major_version >= 6 %>
+rename-command ACL "<%= p('redis.acl_command') %>"
+<% end %>

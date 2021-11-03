@@ -31,6 +31,7 @@ instance_groups:
       redis:
         maxmemory: 262144000
         config_command: configalias
+        acl_command: aclalias
         save_command: anotherrandomstring
         bg_save_command: yetanotherrandomstring
         broker:
