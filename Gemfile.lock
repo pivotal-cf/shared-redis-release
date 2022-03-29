@@ -1250,7 +1250,7 @@ DEPENDENCIES
   solargraph
 
 RUBY VERSION
-   ruby 2.6.0p0
+   ruby 2.6.8p205
 
 BUNDLED WITH
-   2.0.1
+   2.3.7
