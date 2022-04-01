@@ -3,7 +3,7 @@ GEM
   specs:
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.572.0)
+    aws-partitions (1.573.0)
     aws-sdk (3.1.0)
       aws-sdk-resources (~> 3)
     aws-sdk-accessanalyzer (1.29.0)
@@ -219,7 +219,7 @@ GEM
     aws-sdk-configservice (1.76.0)
       aws-sdk-core (~> 3, >= 3.127.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-connect (1.67.0)
+    aws-sdk-connect (1.68.0)
       aws-sdk-core (~> 3, >= 3.127.0)
       aws-sigv4 (~> 1.1)
     aws-sdk-connectcontactlens (1.11.0)
@@ -1249,26 +1249,26 @@ GEM
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
+    mini_portile2 (2.8.0)
     multi_xml (0.6.0)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     net-ssh-gateway (2.0.0)
       net-ssh (>= 4.0.0)
-    nokogiri (1.13.3-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.3-x86_64-darwin)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.1.0)
       ast (~> 2.4.1)
     process_helper (0.1.2)
-    pry (0.13.1)
+    pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-byebug (3.9.0)
+    pry-byebug (3.8.0)
       byebug (~> 11.0)
-      pry (~> 0.13.0)
+      pry (~> 0.10)
     racc (1.6.0)
     rainbow (3.1.1)
     rake (13.0.6)
@@ -1332,7 +1332,7 @@ GEM
       webrick (~> 1.7.0)
 
 PLATFORMS
-  universal-darwin-21
+  ruby
 
 DEPENDENCIES
   aws-sdk
@@ -1354,7 +1354,7 @@ DEPENDENCIES
   solargraph
 
 RUBY VERSION
-   ruby 2.6.8p205
+   ruby 2.6.0p0
 
 BUNDLED WITH
-   2.3.10
+   1.17.3
