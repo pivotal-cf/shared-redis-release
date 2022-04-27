@@ -2,7 +2,7 @@
 name: redis-6.2
 metadata:
   version:
-    redis: '6.2.6'
+    redis: '6.2.7'
 
 files:
-  - redis/redis-6.2.6.tar.gz
+  - redis/redis-6.2.7.tar.gz
