@@ -2,10 +2,10 @@ ginkgo/ginkgo-1.16.5.tar.gz:
   size: 164969
   object_id: 91ed7c26-9bdc-4622-766c-a2bd42200cae
   sha: sha256:8b6890000023055456f20b2c74c8972f9278446ac16e7b564ed6ca6dc1172ea4
-ginkgo/ginkgo-2.4.0.tar.gz:
-  size: 585332
-  object_id: a4af5706-b9a5-4390-66b0-21b967b9da68
-  sha: sha256:b0e5b6d375fd15cfac958c0f78227a96257cc0fe1b13c37cef8255e32c518d0f
+ginkgo/ginkgo-2.5.0.tar.gz:
+  size: 602604
+  object_id: 4ebb6c4e-472f-47df-7955-53e3da899fbc
+  sha: sha256:0e9fb48e6a121517d254197ebd420dade7d5c93fbd2fa5b6d7a7977f91587742
 ginkgo/golang-sys-1.17.tar.gz:
   size: 1178206
   object_id: bc0da3f1-d454-41bf-6591-976e73015baa
