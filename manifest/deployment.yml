@@ -56,6 +56,13 @@ instance_groups:
       nats: {from: nats, deployment: "((cf_deployment_name))"}
   - name: bpm
     release: bpm
+  - name: syslog_forwarder
+    release: syslog
+    properties:
+      syslog:
+        address: ((syslog_endpoint_host))
+        port: ((syslog_endpoint_port))
+        transport: tcp
   - name: broker-registrar
     release: shared-redis
     properties:
@@ -115,6 +122,8 @@ releases:
   version: ((routing_version))
 - name: bpm
   version: ((bpm_version))
+- name: syslog
+  version: ((syslog_version))
 - name: cf-cli
   version: latest
 - name: syslog
