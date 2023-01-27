@@ -126,8 +126,6 @@ releases:
   version: ((syslog_version))
 - name: cf-cli
   version: latest
-- name: syslog
-  version: latest
 
 stemcells:
 - alias: default
