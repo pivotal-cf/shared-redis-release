@@ -48,7 +48,7 @@ instance_groups:
       cf:
         apps_domain: ((apps_domain))
         system_domain: ((system_domain))
-  - name: cf-cli-6-linux
+  - name: cf-cli-8-linux
     release: cf-cli
   - name: route_registrar
     release: routing

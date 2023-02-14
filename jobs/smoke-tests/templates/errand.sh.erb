@@ -8,7 +8,7 @@ set -e
 
 source /var/vcap/packages/golang-1-linux/bosh/compile.env
 
-export PATH="$PATH:/var/vcap/packages/cf-cli-6-linux/bin"
+export PATH="$PATH:/var/vcap/packages/cf-cli-8-linux/bin"
 
 export API_URL="$(grep -Po '"api": *\K"[^"]*"' ../jobs/smoke-tests/config.json | sed -e 's/^"//' -e 's/"$//')"
 export ADMIN_NAME=admin
