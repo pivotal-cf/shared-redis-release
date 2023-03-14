@@ -9,7 +9,7 @@ metadata:
     golang-tools: '0.1.0'
 
 dependencies:
-- golang-1-linux
+- shared-golang-1-linux
 
 files:
 - ginkgo/ginkgo-1.16.5.tar.gz

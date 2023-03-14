@@ -1,7 +1,7 @@
 #!/bin/bash -e
 set -eux
 
-source /var/vcap/packages/golang-1-linux/bosh/compile.env
+source /var/vcap/packages/shared-golang-1-linux/bosh/compile.env
 
 GOPATH="$(mktemp -d)"
 export GOPATH
