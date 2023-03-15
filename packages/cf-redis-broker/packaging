@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-source /var/vcap/packages/shared-golang-1-linux/bosh/compile.env
+source /var/vcap/packages/adapter-golang-1-linux/bosh/compile.env
 
 mkdir -p "$BOSH_INSTALL_TARGET/bin"
 
