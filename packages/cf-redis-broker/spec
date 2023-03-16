@@ -2,7 +2,7 @@
 name: cf-redis-broker
 
 dependencies:
-- adapter-golang-1-linux
+- golang-1-linux
 
 files:
 - cf-redis-broker/**/*

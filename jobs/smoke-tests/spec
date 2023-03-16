@@ -5,7 +5,7 @@ templates:
   errand.sh.erb: bin/run
 
 packages:
-- adapter-golang-1-linux
+- golang-1-linux
 - ginkgo
 - cf-redis-smoke-tests
 
