@@ -15,9 +15,9 @@ ginkgo/golang-tools-0.1.0.tar.gz:
   object_id: 52ed4118-6ae1-428f-4ce8-f32ba271d07d
   sha: sha256:9ff94ce18a8825753d3dc042c072dce9733fe37e52760ec4700409c96d094a81
 ginkgo/slim-sprig-2.20.0.tar.gz:
-  size: 695215
-  object_id: 07cfed5e-12ec-49bb-61ed-5143bed8f0e9
-  sha: sha256:5ad9f828be569bfb063ee35c82217610008f60609640bd3cdee237c171068a30
+  size: 696101
+  object_id: 678702c4-b3aa-462d-5ec6-d97fc01baf06
+  sha: sha256:baf51c6e0a448f6cdffafc381f115c066af455c9fad0c4a0dbf3071665982b6a
 ginkgo/tail-nxadm-1.4.4.tar.gz:
   size: 3889601
   object_id: 58d52a2f-e4f8-4c41-7416-f5c878beecbd
