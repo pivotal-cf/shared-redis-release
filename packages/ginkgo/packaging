@@ -6,8 +6,8 @@ source /var/vcap/packages/golang-1-linux/bosh/compile.env
 GOPATH="$(mktemp -d)"
 export GOPATH
 
-mkdir -p "$GOPATH/src/github.com/onsi/ginkgo"
-tar xfz ginkgo/ginkgo-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/onsi/ginkgo/"
+mkdir -p "$GOPATH/src/github.com/onsi/ginkgo/v2"
+tar xfz ginkgo/ginkgo-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/onsi/ginkgo/v2"
 
 mkdir -p "$GOPATH/src/github.com/nxadm/tail"
 tar xzf ginkgo/tail-nxadm-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/nxadm/tail"
@@ -21,8 +21,14 @@ tar xzf ginkgo/golang-sys-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.o
 mkdir -p "$GOPATH/src/golang.org/x/tools"
 tar zxvf ginkgo/golang-tools-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.org/x/tools"
 
+mkdir -p "$GOPATH/src/github.com/google/pprof"
+tar zxvf ginkgo/pprof-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/google/pprof"
+
+# remove pprof test binaries because they are failing CVE checks
+rm -rf $GOPATH/src/github.com/google/pprof/internal/report/testdata/
+
 pushd "$GOPATH"
-    GO111MODULE=auto go build -o "$BOSH_INSTALL_TARGET/ginkgo" github.com/onsi/ginkgo/ginkgo
+    GO111MODULE=auto go build -o "$BOSH_INSTALL_TARGET/ginkgo" github.com/onsi/ginkgo/v2/ginkgo
 popd
 
 rm -rf "$GOPATH"
