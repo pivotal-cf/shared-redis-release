@@ -20,7 +20,7 @@ packages:
 - redis-common
 - cf-redis-nginx
 - redis-5.0
-- redis-6.2
+- redis-7.2
 
 provides:
 - name: redis_broker
