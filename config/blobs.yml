@@ -34,3 +34,7 @@ redis/redis-6.2.14.tar.gz:
   size: 2496149
   object_id: a549d024-566e-43a5-4d41-20d0a229697d
   sha: sha256:34e74856cbd66fdb3a684fb349d93961d8c7aa668b06f81fd93ff267d09bc277
+redis/redis-7.2.3.tar.gz:
+  size: 3422359
+  object_id: 7186ba8b-fd04-43fe-6926-ca4b21165ab2
+  sha: sha256:afd656dbc18a886f9a1cc08a550bf5eb89de0d431e713eba3ae243391fb008a6
