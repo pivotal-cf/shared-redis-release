@@ -11,19 +11,21 @@ instance_groups:
   stemcell: default
   persistent_disk_type: ((default_persistent_disk_type))
   properties:
+    nats:
+      fail_if_using_nats_without_tls: false
     route_registrar:
       routes:
-      - health_check:
-          name: ((broker_name))
-          script_path: /var/vcap/jobs/cf-redis-broker/bin/health_check.sh
-        name: broker_0
-        port: 12350
-        registration_interval: 10s
-        tags:
-          component: redis-broker
-          env: production
-        uris:
-        - ((broker_name)).((system_domain))
+        - health_check:
+            name: ((broker_name))
+            script_path: /var/vcap/jobs/cf-redis-broker/bin/health_check.sh
+          name: broker_0
+          port: 12350
+          registration_interval: 10s
+          tags:
+            component: redis-broker
+            env: production
+          uris:
+            - ((broker_name)).((system_domain))
   jobs:
   - name: cf-redis-broker
     release: shared-redis
@@ -53,7 +55,7 @@ instance_groups:
   - name: route_registrar
     release: routing
     consumes:
-      nats: {from: nats, deployment: "((cf_deployment_name))"}
+      nats: {from: nats, deployment: ((cf_deployment_name))}
   - name: bpm
     release: bpm
   - name: syslog_forwarder

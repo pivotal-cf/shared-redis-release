@@ -1,0 +1,8 @@
+---
+name: redis-7.2
+metadata:
+  version:
+    redis: '7.2.3'
+
+files:
+  - redis/redis-7.2.3.tar.gz
