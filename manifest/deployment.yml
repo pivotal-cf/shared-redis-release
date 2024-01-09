@@ -12,7 +12,10 @@ instance_groups:
   persistent_disk_type: ((default_persistent_disk_type))
   properties:
     nats:
-      fail_if_using_nats_without_tls: false
+      tls:
+        enabled: true
+        client_cert: ((nats_client_cert.certificate))
+        client_key: ((nats_client_cert.private_key))
     route_registrar:
       routes:
         - health_check:
@@ -55,7 +58,7 @@ instance_groups:
   - name: route_registrar
     release: routing
     consumes:
-      nats: {from: nats, deployment: ((cf_deployment_name))}
+      nats-tls: {from: nats-tls, deployment: ((cf_deployment_name))}
   - name: bpm
     release: bpm
   - name: syslog_forwarder

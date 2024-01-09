@@ -16,7 +16,7 @@ jobs:
       machines:
       - 10.244.0.6
       password: nats
-      port: 4222
+      port: 4224
       user: nats
     route_registrar:
       routes:
