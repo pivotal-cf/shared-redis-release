@@ -19,8 +19,6 @@ packages:
 - cf-redis-broker
 - redis-common
 - cf-redis-nginx
-- redis-5.0
-- redis-6.2
 - redis-7.2
 
 provides:
