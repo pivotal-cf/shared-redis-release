@@ -124,7 +124,7 @@ describe 'shared plan' do
 
       it 'runs correct version of redis' do
         service_client = service_client_builder(@service_binding)
-        expect(service_client.info('redis_version')).to start_with('5.')
+        expect(service_client.info('redis_version')).to start_with('7.')
       end
     end
 
@@ -192,15 +192,15 @@ describe 'shared plan' do
   context 'service broker' do
     let(:admin_command_availability) do
       {
-        'BGSAVE' => false,
-        'BGREWRITEAOF' => false,
         'MONITOR' => false,
         'SAVE' => false,
         'DEBUG' => false,
         'SHUTDOWN' => false,
         'SLAVEOF' => false,
         'SYNC' => false,
-        'CONFIG' => false
+        'CONFIG' => false,
+        'BGSAVE' => false,
+        'BGREWRITEAOF' => false,
       }
     end
 
