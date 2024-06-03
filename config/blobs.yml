@@ -32,5 +32,5 @@ redis/redis-7.2.4.tar.gz:
   sha: sha256:0a62b9ae89b4be4e8d40c0035c83a72cb6776f4b62fe53553981a57f0f4ff73d
 valkey/valkey-7.2.5.tar.gz:
   size: 3420515
-  object_id: c8898c20-ef06-4d92-725c-08ac91394c39
+  object_id: 5d1c16d1-310d-4143-6b2b-0b7a31dabd5a
   sha: sha256:c7c7a758edabe7693b3692db58fe5328130036b06224df64ab1f0c12fe265a76
