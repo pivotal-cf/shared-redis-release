@@ -19,9 +19,7 @@ packages:
 - cf-redis-broker
 - redis-common
 - cf-redis-nginx
-- redis-5.0
 - redis-6.2
-- redis-7.2
 
 provides:
 - name: redis_broker
@@ -35,7 +33,7 @@ provides:
 properties:
   redis.version:
     description: "Version of Redis to use"
-    default: "5.0"
+    default: "6.2"
 
   service-backup.source_folder:
     description: The directory in which we store service backups
