@@ -2,7 +2,7 @@
 name: ginkgo
 metadata:
   version:
-    ginkgo: '2.19.0'
+    ginkgo: '2.19.1'
     tail-nxadm: '1.4.4'
     slim-sprig: '2.20.0'
     golang-sys: '1.17'
@@ -13,7 +13,7 @@ dependencies:
 - golang-1-linux
 
 files:
-- ginkgo/ginkgo-2.19.0.tar.gz
+- ginkgo/ginkgo-2.19.1.tar.gz
 - ginkgo/tail-nxadm-1.4.4.tar.gz
 - ginkgo/slim-sprig-2.20.0.tar.gz
 - ginkgo/golang-sys-1.17.tar.gz
