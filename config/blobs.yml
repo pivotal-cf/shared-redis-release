@@ -24,7 +24,7 @@ ginkgo/tail-nxadm-1.4.4.tar.gz:
   sha: sha256:d3d6737a0cbcdd811c83e9e3b9187aba29c6349613a8e11560d2899f9929dff6
 nginx/nginx-1.21.6.tar.gz:
   size: 1073364
-  object_id: e86e10c7-9fe8-4ebd-63ff-3afbf7dc021a
+  object_id: a16dcff1-07d1-4ccf-655f-5072790b4cc5
   sha: sha256:66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
 redis/redis-7.2.4.tar.gz:
   size: 3424072
