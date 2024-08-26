@@ -15,9 +15,9 @@ ginkgo/pprof-0.0.1.tar.gz:
   object_id: e6d6dbec-11bf-4ad6-60d0-576408fa5f08
   sha: sha256:f803e9ddf10111fd7b1e766374f75094a6f735b200693634bec501a5344c5e7b
 ginkgo/slim-sprig-2.20.0.tar.gz:
-  size: 697815
-  object_id: 4df2b05f-6a84-4c81-6a93-ab3602136db9
-  sha: sha256:4ed31aff4593a0dfe125274939792747e00d5905ff9471642334d70d85100711
+  size: 697617
+  object_id: 8390b99d-a3ff-4a2d-43b1-01b53d6bfc10
+  sha: sha256:cada967314057f5791eddbd0fd03e40afe1f51155e30db00a1fae9ddd2004da4
 ginkgo/tail-nxadm-1.4.4.tar.gz:
   size: 4758949
   object_id: bd545632-5d0f-4637-65ae-0d2e8f6ab645
