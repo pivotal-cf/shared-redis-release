@@ -7,9 +7,9 @@ ginkgo/golang-sys-1.17.tar.gz:
   object_id: 7396798d-ed0d-402d-4a7d-5ac6092c7cb7
   sha: sha256:fcb0fcefd421964ba6508a897d9ecbc30897d0db24bc9542dee56040e06e4148
 ginkgo/golang-tools-0.1.0.tar.gz:
-  size: 2691231
-  object_id: beb77fde-719f-4e96-78ad-f2d5607cd29f
-  sha: sha256:56cec4d1549e07008b8a2666f5fddd89f0c88125bed0abdbf95f005b78521193
+  size: 2689323
+  object_id: 6a70be5c-d375-4259-5f92-5047d05d1685
+  sha: sha256:9103a706a17027e5adfdbeeca9612e54ccead3935d86f7c32e001033c58d018f
 ginkgo/pprof-0.0.1.tar.gz:
   size: 2976421
   object_id: e6d6dbec-11bf-4ad6-60d0-576408fa5f08
