@@ -13,7 +13,7 @@ dependencies:
 - golang-1-linux
 
 files:
-- ginkgo/ginkgo-2.20.0.tar.gz
+- ginkgo/ginkgo-2.20.1.tar.gz
 - ginkgo/tail-nxadm-1.4.4.tar.gz
 - ginkgo/slim-sprig-2.20.0.tar.gz
 - ginkgo/golang-sys-1.17.tar.gz
