@@ -1,32 +1,32 @@
-ginkgo/ginkgo-2.18.0.tar.gz:
-  size: 638611
-  object_id: 6b3d6728-616c-42c8-50bc-a197a4d6758d
-  sha: sha256:ab36daf0dd1db4a3b469babd1fbd8666223349c0a56d9d8ae98de21a8f71f94a
+ginkgo/ginkgo-2.20.1.tar.gz:
+  size: 643173
+  object_id: 4c9d1861-e9d1-43eb-6943-b12bd3f9fdaa
+  sha: sha256:c81871afccce1292faad7068b7b78704eabd9cae53979c3293a2752a8942f2dc
 ginkgo/golang-sys-1.17.tar.gz:
-  size: 1178206
-  object_id: bc0da3f1-d454-41bf-6591-976e73015baa
-  sha: sha256:6b4530381cdb37ece86823f63c827834821091f4e78ff8c084f490731c8f0391
+  size: 1404537
+  object_id: 15c98d8d-24e5-46ae-49e9-2610b2088ede
+  sha: sha256:2f15d75481a3ecaac5668724ff2fcf4f7ea84083217f163069ad7f2e0a484905
 ginkgo/golang-tools-0.1.0.tar.gz:
-  size: 2685869
-  object_id: 52ed4118-6ae1-428f-4ce8-f32ba271d07d
-  sha: sha256:9ff94ce18a8825753d3dc042c072dce9733fe37e52760ec4700409c96d094a81
+  size: 2694269
+  object_id: 46a23a59-be0f-48a0-7b2f-aa4437072706
+  sha: sha256:3904f55d7ad7da3f6ff4550099e8e40d2fa56e5e086b51b52ea193cf1145d49f
 ginkgo/pprof-0.0.1.tar.gz:
   size: 2976421
   object_id: e6d6dbec-11bf-4ad6-60d0-576408fa5f08
   sha: sha256:f803e9ddf10111fd7b1e766374f75094a6f735b200693634bec501a5344c5e7b
 ginkgo/slim-sprig-2.20.0.tar.gz:
-  size: 698254
-  object_id: 7595cb48-6535-4a69-4ed9-3402defa7deb
-  sha: sha256:a887a3bb8023ce844d8f3298b3632b3b916afa8134525ccb2dbc737398abfe9e
+  size: 697464
+  object_id: 763b3d06-8623-477d-6e0f-bb44c1bd1360
+  sha: sha256:f42e15f773d8bf03530ea9c8b6e8bcaa2d51ed2c301bcfa522a8f7179bd649e5
 ginkgo/tail-nxadm-1.4.4.tar.gz:
-  size: 3889601
-  object_id: 58d52a2f-e4f8-4c41-7416-f5c878beecbd
-  sha: sha256:8822781bc57f805d798153fb7bae9b1a94be57b1bc01b19933c9ab4278eb5d24
+  size: 4758676
+  object_id: eb11f07b-4e61-4887-46c1-d2ae5ff535a9
+  sha: sha256:de93267ccb6915f1e346d38110426fa320eddfb986f3f59186a22b63030bf6ad
 nginx/nginx-1.21.6.tar.gz:
   size: 1073364
-  object_id: 1ae99e13-5bc8-450a-48ea-1ad03e64207e
+  object_id: cac13950-0d5e-4f7f-4816-f0b96f8f52e7
   sha: sha256:66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
-redis/redis-6.2.14.tar.gz:
-  size: 2496149
-  object_id: c4528c36-4181-4b61-7729-02c9977e9d3a
-  sha: sha256:34e74856cbd66fdb3a684fb349d93961d8c7aa668b06f81fd93ff267d09bc277
+valkey/valkey-7.2.5.tar.gz:
+  size: 33937123
+  object_id: cb3f70f8-47ed-4baf-60eb-2663de1e03f4
+  sha: sha256:c93ed01fe40e56253545ce7f62e62136e37f7e41713a1f5bdf5c866c09c0d9bc
