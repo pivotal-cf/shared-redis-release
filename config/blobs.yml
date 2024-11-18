@@ -27,6 +27,6 @@ nginx/nginx-1.21.6.tar.gz:
   object_id: cac13950-0d5e-4f7f-4816-f0b96f8f52e7
   sha: sha256:66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
 valkey/valkey-7.2.5.tar.gz:
-  size: 3420515
-  object_id: 5d1c16d1-310d-4143-6b2b-0b7a31dabd5a
-  sha: sha256:c7c7a758edabe7693b3692db58fe5328130036b06224df64ab1f0c12fe265a76
+  size: 33937123
+  object_id: cb3f70f8-47ed-4baf-60eb-2663de1e03f4
+  sha: sha256:c93ed01fe40e56253545ce7f62e62136e37f7e41713a1f5bdf5c866c09c0d9bc
