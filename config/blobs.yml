@@ -10,10 +10,10 @@ ginkgo/golang-tools-0.1.0.tar.gz:
   size: 2689467
   object_id: 3a501c6f-da74-4301-5713-c8f8689f73d9
   sha: sha256:26859370f305529f93e08df54a7c73f57c95514cc61607a97d9793db681f862f
-ginkgo/pprof-0.0.1.tar.gz:
-  size: 2976421
-  object_id: e6d6dbec-11bf-4ad6-60d0-576408fa5f08
-  sha: sha256:f803e9ddf10111fd7b1e766374f75094a6f735b200693634bec501a5344c5e7b
+ginkgo/pprof-0.b92577c.tar.gz:
+  size: 11521325
+  object_id: 41bb3306-c8bf-45b1-78bc-d674b316503f
+  sha: sha256:23cb9c3dc436bcc090dea50403733ef852a952df7e9d20236a9605700c460e84
 ginkgo/slim-sprig-2.20.1.tar.gz:
   size: 696471
   object_id: 0ab95480-caca-406b-4a53-44133258adf6
