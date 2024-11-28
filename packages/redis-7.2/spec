@@ -5,4 +5,4 @@ metadata:
     redis: '7.2.5'
 
 files:
-  - redis/redis-7.2.5.tar.gz
+  - redis/redis-7.2.6.tar.gz
