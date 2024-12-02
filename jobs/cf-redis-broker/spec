@@ -19,7 +19,7 @@ packages:
 - cf-redis-broker
 - redis-common
 - cf-redis-nginx
-- redis-7.2
+- redis-8.0
 
 provides:
 - name: redis_broker
