@@ -33,7 +33,7 @@ provides:
 properties:
   redis.version:
     description: "Version of Redis to use"
-    default: "7.2"
+    default: "8.0"
 
   service-backup.source_folder:
     description: The directory in which we store service backups
