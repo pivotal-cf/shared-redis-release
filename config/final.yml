@@ -4,4 +4,4 @@ min_cli_version: 1.5.0.pre.1113
 blobstore:
   provider: gcs
   options:
-    bucket_name: shared-redis-bosh-release-blobs
+    bucket_name: cf-redis-shared-redis-bosh-release-blobs
