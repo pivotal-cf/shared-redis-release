@@ -24,6 +24,9 @@ tar zxvf ginkgo/golang-tools-*.tar.gz --strip-components=1 -C "$GOPATH/src/golan
 mkdir -p "$GOPATH/src/github.com/google/pprof"
 tar zxvf ginkgo/pprof-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/google/pprof"
 
+mkdir -p "$GOPATH/src/go.uber.org/automaxprocs"
+tar zxvf ginkgo/automaxprocs-*.tar.gz --strip-components=1 -C "$GOPATH/src/go.uber.org/automaxprocs"
+
 # remove pprof test binaries because they are failing CVE checks
 rm -rf $GOPATH/src/github.com/google/pprof/internal/report/testdata/
 
