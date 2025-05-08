@@ -1,8 +1,0 @@
----
-name: redis-8.0
-metadata:
-  version:
-    redis: '8.0.1'
-
-files:
-  - valkey/valkey-8.0.1.tar.gz
