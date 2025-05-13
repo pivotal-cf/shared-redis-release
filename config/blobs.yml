@@ -23,9 +23,9 @@ ginkgo/slim-sprig-2.20.1.tar.gz:
   object_id: cd66cff6-cfd6-4844-4b10-83bc1859bd1b
   sha: sha256:91f5c1e9c5deadb7ab063be890bf19cdd8490797c8f8cd4035d102ca11aa7985
 ginkgo/tail-nxadm-1.4.4.tar.gz:
-  size: 4767581
-  object_id: d66f8fbb-e21c-4ac9-708b-0716be1ad1cc
-  sha: sha256:8d49f5f8322b01f05429c5cffc3d5c2861cc1c7b5f37170ef060f563aab911c1
+  size: 4778306
+  object_id: 0b2264b9-a8b1-4794-63ed-34bb9aab0eaa
+  sha: sha256:dbf6986a05ebd92503c02c89e8d5f899f2f4f635d41d627150b63509f5b39696
 nginx/nginx-1.21.6.tar.gz:
   size: 1073364
   object_id: bb381576-a804-4155-694e-374905693d43
