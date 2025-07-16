@@ -30,7 +30,7 @@ nginx/nginx-1.21.6.tar.gz:
   size: 1073364
   object_id: bb381576-a804-4155-694e-374905693d43
   sha: sha256:66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
-valkey/valkey-8.1.1.tar.gz:
-  size: 3806719
-  object_id: 1961c63c-2525-4e66-6def-5677d95c8fda
-  sha: sha256:3355fbd5458d853ab201d2c046ffca9f078000587ccbe9a6c585110f146ad2c5
+valkey/valkey-8.1.3.tar.gz:
+  size: 3812087
+  object_id: 350b571b-2bf6-49d5-589e-fc31c6d523a6
+  sha: sha256:7803c0671ddf9849e8195a03807ead8f978edb08f69fd8ef876d86877028ad59
