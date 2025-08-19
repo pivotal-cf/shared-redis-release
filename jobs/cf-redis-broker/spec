@@ -194,19 +194,19 @@ properties:
     description: The name of the network that the redis broker runs on.
 
   redis.broker.description:
-    default: "Redis service to provide a key-value store"
+    default: "Valkey service to provide a key-value store"
     description: Short description displayed in Apps Manager and CF marketplace
   redis.broker.provider_display_name:
-    default: "Pivotal"
+    default: "Tanzu"
     description: Provider name displayed in Apps Manager
   redis.broker.documentation_url:
-    default: "http://docs.pivotal.io/redis/index.html"
+    default: "https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-for-valkey-on-cloud-foundry/10-1/valkey-on-cf/index.html"
     description: URL for product documentation displayed in Apps Manager
   redis.broker.support_url:
-    default: "http://support.pivotal.io"
+    default: "https://support.broadcom.com/group/ecx/contact-support"
     description: URL for product support displayed in Apps Manager
   redis.broker.display_name:
-    default: "Redis"
+    default: "Valkey"
     description: Product name displayed in Apps Manager
   redis.broker.long_description:
     default: ""
