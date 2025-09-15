@@ -27,6 +27,9 @@ tar zxvf ginkgo/pprof-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/g
 mkdir -p "$GOPATH/src/go.uber.org/automaxprocs"
 tar zxvf ginkgo/automaxprocs-*.tar.gz --strip-components=1 -C "$GOPATH/src/go.uber.org/automaxprocs"
 
+mkdir -p "$GOPATH/src/github.com/Masterminds/semver"
+tar zxvf ginkgo/semver-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/Masterminds/semver"
+
 # remove pprof test binaries because they are failing CVE checks
 rm -rf $GOPATH/src/github.com/google/pprof/internal/report/testdata/
 

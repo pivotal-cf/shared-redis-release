@@ -18,6 +18,10 @@ ginkgo/pprof-0.6e76a2b.tar.gz:
   size: 11714640
   object_id: 6e269e0c-fa74-4a24-648e-1a06436eb51f
   sha: sha256:e182294096242070e42ab06e848b4fbe3a5004d7d1383ab8d1579bd898ba7699
+ginkgo/semver-3.3.1.tar.gz:
+  size: 28210
+  object_id: b041c55f-88e4-4d61-6323-9d09c58c10cf
+  sha: sha256:495b165ada0aa6f8798d0ff2474c5982faf8e1b8418364149f490029f9f4cb35
 ginkgo/slim-sprig-2.20.1.tar.gz:
   size: 699090
   object_id: cd66cff6-cfd6-4844-4b10-83bc1859bd1b
