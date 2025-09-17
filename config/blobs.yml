@@ -23,9 +23,9 @@ ginkgo/semver-3.3.1.tar.gz:
   object_id: b041c55f-88e4-4d61-6323-9d09c58c10cf
   sha: sha256:495b165ada0aa6f8798d0ff2474c5982faf8e1b8418364149f490029f9f4cb35
 ginkgo/slim-sprig-2.20.1.tar.gz:
-  size: 701892
-  object_id: 8c4e3635-f0fc-48e8-52a7-ff1aa72bb127
-  sha: sha256:eefa51b68a467c9ddb72f2e57447d4bf444cca43f8ffb8aa3c6ae8f737d52a86
+  size: 701934
+  object_id: 5edde0d4-c19e-4142-64e8-acd29d2de3e4
+  sha: sha256:9d4bbb11a5c1cd0111a627ce2ee2f9def088744a9c37f1bae3210684dfcf9522
 ginkgo/tail-nxadm-1.4.4.tar.gz:
   size: 4778306
   object_id: 0b2264b9-a8b1-4794-63ed-34bb9aab0eaa
