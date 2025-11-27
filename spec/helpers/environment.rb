@@ -121,7 +121,7 @@ module Helpers
       end
 
 
-      gateway = Helpers::SshGateway.new(opts)
+      gateway = Helpers::SshGateway.new(**opts)
 
       def gateway.execute_on(*args, &block)
         original_stderr = $stderr
