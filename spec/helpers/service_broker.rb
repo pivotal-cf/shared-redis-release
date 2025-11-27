@@ -7,7 +7,7 @@ module Helpers
 
     def initialize(args = {})
       api_args = args.reject { |k, _v| k == :api }
-      @api = args.fetch(:api) { Helpers::ServiceBrokerApi.new(api_args) }
+      @api = args.fetch(:api) { Helpers::ServiceBrokerApi.new(**api_args) }
     end
 
     def provision_instance(service_name, plan_name)
