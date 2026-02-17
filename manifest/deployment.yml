@@ -53,8 +53,8 @@ instance_groups:
       cf:
         apps_domain: ((apps_domain))
         system_domain: ((system_domain))
-  - name: tanzu-cf-cli-linux
-    release: tanzu-cf-cli
+  - name: cf-cli-8-linux
+    release: cf-cli
   - name: route_registrar
     release: routing
     consumes:
@@ -129,7 +129,7 @@ releases:
   version: ((bpm_version))
 - name: syslog
   version: ((syslog_version))
-- name: tanzu-cf-cli
+- name: cf-cli
   version: latest
 
 stemcells:
