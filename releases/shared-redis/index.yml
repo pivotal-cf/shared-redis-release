@@ -11,6 +11,8 @@ builds:
     version: 10.2.2
   d120d416-0226-4730-461c-3089c64d871c:
     version: 10.1.2
+  dd8756eb-a085-4077-702b-abe446f14239:
+    version: 10.2.5
   f8e51f99-eb28-4071-44da-bfe8ee300b54:
     version: 10.2.4
 format-version: "2"
