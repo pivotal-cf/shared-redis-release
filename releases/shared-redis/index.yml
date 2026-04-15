@@ -9,6 +9,8 @@ builds:
     version: 10.2.0
   bb21437c-9ccc-4a69-40df-3c4c2480eee1:
     version: 10.2.2
+  cab21cc9-72a6-4f48-747f-c28883ac730a:
+    version: 10.4.2
   d120d416-0226-4730-461c-3089c64d871c:
     version: 10.1.2
 format-version: "2"
