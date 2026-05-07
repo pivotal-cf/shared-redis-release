@@ -15,9 +15,9 @@ ginkgo/golang-sys-1.17.tar.gz:
   object_id: 6e1959a8-543a-4628-648a-afaa87db077b
   sha: sha256:9d81bda142ba65be4a82557f335c0010ee94ac05a0804bdc618fba76dda64c7e
 ginkgo/golang-tools-0.1.0.tar.gz:
-  size: 2693608
-  object_id: 3e21b167-e3cf-44fb-684a-91094bc6568f
-  sha: sha256:ba66f99ceed5b16101fcac0d9f8a87003be03a60bcb06954dc1ee2458e6fe0e2
+  size: 2694121
+  object_id: 6ce71a79-3f52-4382-6009-e687e3353b18
+  sha: sha256:fca0ed41b56ffa18cb2c19ad82f55a66f283ff5f03b53be26f42fc36664a540b
 ginkgo/golang-xerrors-0.0.1.tar.gz:
   size: 13670
   object_id: 32eeda4b-a47e-48fd-6030-d87915ee5f6e
