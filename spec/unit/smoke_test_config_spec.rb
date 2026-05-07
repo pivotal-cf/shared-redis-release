@@ -59,7 +59,7 @@ RSpec.describe 'smoke-tests config' do
         'existing_space' => 'a-space-name',
         'skip_ssl_validation' => false,
         'name_prefix' => "cf-redis-smoke-tests",
-        'service_name' => 'p-redis',
+        'service_name' => 'p-valkey',
         'plan_names' => [],
         'retry' => {
           'max_attempts' => 10,
