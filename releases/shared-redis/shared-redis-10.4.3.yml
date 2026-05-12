@@ -1,0 +1,74 @@
+name: shared-redis
+version: 10.4.3
+commit_hash: 0bbc9ca
+uncommitted_changes: false
+jobs:
+- name: broker-deregistrar
+  version: 49551a962c9128b9d30b27563102964d23787d681fc7dd10e954961ff547c8f8
+  fingerprint: 49551a962c9128b9d30b27563102964d23787d681fc7dd10e954961ff547c8f8
+  sha1: sha256:c13a30b78b270d43736c1afb95d2e0003cd36ea35c4eb55b9286e7542929cd92
+  packages: []
+- name: broker-registrar
+  version: 07c1ebe70ee0305e67fc430b14584a1ff9f91b57cdb1c9f0ac06dc8cf4dbbff7
+  fingerprint: 07c1ebe70ee0305e67fc430b14584a1ff9f91b57cdb1c9f0ac06dc8cf4dbbff7
+  sha1: sha256:af8bfb4639394144a01941549e9676c13faa3048bf0e59ce80221290f7333aeb
+  packages: []
+- name: cf-redis-broker
+  version: 6c5f83f36f471fea9d1bb7b6b5cce4f6f49fc9c83c42c98b148454d0f9d87b8c
+  fingerprint: 6c5f83f36f471fea9d1bb7b6b5cce4f6f49fc9c83c42c98b148454d0f9d87b8c
+  sha1: sha256:31535c23dee12f09aaecd5914e2c2dd5a843858806080a31ba792e7a426eb80f
+  packages:
+  - cf-redis-broker
+  - redis-common
+  - cf-redis-nginx
+  - redis-8.1
+- name: smoke-tests
+  version: 7287d729ec676033fc5c261b530dbf76307f02f111c8c68684131f2dd822fff7
+  fingerprint: 7287d729ec676033fc5c261b530dbf76307f02f111c8c68684131f2dd822fff7
+  sha1: sha256:747a923b1322f0ebb546a58c676f3f29bed90fb8d3962a3ca91490c19f57b96a
+  packages:
+  - golang-1-linux
+  - ginkgo
+  - cf-redis-smoke-tests
+packages:
+- name: cf-redis-broker
+  version: 91b1d2db5e07196fa03a4f1f2f63e90530da59eba4b321719c7e15fca0c8bc57
+  fingerprint: 91b1d2db5e07196fa03a4f1f2f63e90530da59eba4b321719c7e15fca0c8bc57
+  sha1: sha256:6415a0966d6c6d760e550901b03ba9f181ebdc719a95e5430f871aaa6a7ffc8b
+  dependencies:
+  - golang-1-linux
+- name: cf-redis-nginx
+  version: 0597c1f0a4e121868e78e3ef5da1e14e6c39ca45b71232db25001f1017a8a62d
+  fingerprint: 0597c1f0a4e121868e78e3ef5da1e14e6c39ca45b71232db25001f1017a8a62d
+  sha1: sha256:fcfb8575798112f17a4b7c6bd8263516a52544a69d0c668116af0caa1141fd5b
+  dependencies: []
+- name: cf-redis-smoke-tests
+  version: 9c531a19e0ba40bb3cb92645872dbf432ebf94e3501e4fd7205e91d51a49150b
+  fingerprint: 9c531a19e0ba40bb3cb92645872dbf432ebf94e3501e4fd7205e91d51a49150b
+  sha1: sha256:e61ac376d0e788438b931a1c05a76d369b877307e86cab3c217c36ccd99c7164
+  dependencies: []
+- name: ginkgo
+  version: 12ad1cc62c1bcf25e6b812406def54ef9ee7d0935517927c30c846e2aaecb847
+  fingerprint: 12ad1cc62c1bcf25e6b812406def54ef9ee7d0935517927c30c846e2aaecb847
+  sha1: sha256:cc9717c83e4e7a3e6e93f28b07a5eadcde6d66404f28f180a974007fce438520
+  dependencies:
+  - golang-1-linux
+- name: golang-1-linux
+  version: 13cae133eddfb84c2b42976ae01abbac89ab1f092697457046e596037adc6ff5
+  fingerprint: 13cae133eddfb84c2b42976ae01abbac89ab1f092697457046e596037adc6ff5
+  sha1: sha256:e0e73720d1d0e027ceed131efc15c43622291a684913d64cbd9f114e4836706d
+  dependencies: []
+- name: redis-8.1
+  version: 9ea98992eccd859d418edf4266b7ceba1de82020990a2fa8c968b744861329c4
+  fingerprint: 9ea98992eccd859d418edf4266b7ceba1de82020990a2fa8c968b744861329c4
+  sha1: sha256:6e44a45633f952235ea3e380d1765c5bdbcb6c2f4fdc9088dd6796c183e7d6e4
+  dependencies: []
+- name: redis-common
+  version: b16afa494f94b52288c58dcbafc0c33b602b1f6d55a9f092538f9bd051b29fc7
+  fingerprint: b16afa494f94b52288c58dcbafc0c33b602b1f6d55a9f092538f9bd051b29fc7
+  sha1: sha256:008e04664f7450b7e23caaec9327939986121ebd418be997ddd057f748784c94
+  dependencies: []
+license:
+  version: 6e6b997fae69a730661aef793be8b75311da3254e147c5e7dc71447df4c72ba1
+  fingerprint: 6e6b997fae69a730661aef793be8b75311da3254e147c5e7dc71447df4c72ba1
+  sha1: sha256:dfb5320d2b52e2eec833cbab8597e50312244fe7f6590cd62fce24e0904c6be3
