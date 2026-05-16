@@ -43,7 +43,7 @@ properties:
     default: true
   redis.broker.service_name:
     description: Service name displayed in the catalog metadata
-    default: p-valkey
+    default: p-redis
   redis.broker.service_instance_limit:
     description: The maximum number of instances allowed
   retry.max_attempts:
