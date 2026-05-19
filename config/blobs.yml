@@ -40,7 +40,7 @@ ginkgo/tail-nxadm-1.4.4.tar.gz:
   sha: sha256:779f7ec123959e3899e4e480085918432cb9a7c007014c394c5423dfa7f61084
 nginx/nginx-1.21.6.tar.gz:
   size: 1073364
-  object_id: 612c4642-2686-4aca-5c9f-a5eeb896ce07
+  object_id: 99d71b03-5218-4849-61c0-6370e873965e
   sha: sha256:66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
 valkey/valkey-8.1.4.tar.gz:
   size: 3816705
