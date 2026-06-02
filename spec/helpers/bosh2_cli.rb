@@ -154,7 +154,7 @@ module Helpers
     private
 
     def extract_stdout(raw_output)
-      result = JSON.parse(raw_output)
+      result = JSON.parse(raw_output.force_encoding('UTF-8'))
       stdout = []
 
       blocks = result.fetch('Blocks')
