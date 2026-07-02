@@ -1,40 +1,48 @@
-ginkgo/ginkgo-2.18.0.tar.gz:
-  size: 638611
-  object_id: 6b3d6728-616c-42c8-50bc-a197a4d6758d
-  sha: sha256:ab36daf0dd1db4a3b469babd1fbd8666223349c0a56d9d8ae98de21a8f71f94a
+ginkgo/automaxprocs-1.6.0.tar.gz:
+  size: 24465
+  object_id: 87bf07ca-388d-40bc-5fe3-63a15e7dd102
+  sha: sha256:fb750295e270f668502fb139ff626bf5209033c7893b29521238cd04502e55cf
+ginkgo/ginkgo-2.32.0.tar.gz:
+  size: 738447
+  object_id: 1c4ff5e7-e53b-42de-714a-fa2c3971694c
+  sha: sha256:f1428b6acb6ab994cbe10917c187668153a8048076d89e919443552222a55ba4
+ginkgo/golang-mod-0.17.0.tar.gz:
+  size: 122062
+  object_id: baeee66c-d1da-4023-5e9e-f8dac6ac79f0
+  sha: sha256:42f3790e2ee1c27c5f18f1450056a81be018cd79b49efa0969bd7f39cea96f84
 ginkgo/golang-sys-1.17.tar.gz:
-  size: 1178206
-  object_id: bc0da3f1-d454-41bf-6591-976e73015baa
-  sha: sha256:6b4530381cdb37ece86823f63c827834821091f4e78ff8c084f490731c8f0391
+  size: 1409131
+  object_id: 7d3cf972-5a78-431c-7684-894baf96c368
+  sha: sha256:51c16d686614aaaf7975aa709e66f617f5874535653783f6a07a5c38dc86d483
 ginkgo/golang-tools-0.1.0.tar.gz:
-  size: 2685869
-  object_id: 52ed4118-6ae1-428f-4ce8-f32ba271d07d
-  sha: sha256:9ff94ce18a8825753d3dc042c072dce9733fe37e52760ec4700409c96d094a81
-ginkgo/pprof-0.0.1.tar.gz:
-  size: 2976421
-  object_id: e6d6dbec-11bf-4ad6-60d0-576408fa5f08
-  sha: sha256:f803e9ddf10111fd7b1e766374f75094a6f735b200693634bec501a5344c5e7b
-ginkgo/slim-sprig-2.20.0.tar.gz:
-  size: 698254
-  object_id: 7595cb48-6535-4a69-4ed9-3402defa7deb
-  sha: sha256:a887a3bb8023ce844d8f3298b3632b3b916afa8134525ccb2dbc737398abfe9e
+  size: 2694218
+  object_id: b25f21be-3ae2-4c43-7b55-725291ab60c6
+  sha: sha256:c96046e6948342eee20e363ddb459744190d80dc2e2881d92387dc722bbe3a1d
+ginkgo/golang-xerrors-0.0.1.tar.gz:
+  size: 13670
+  object_id: 32eeda4b-a47e-48fd-6030-d87915ee5f6e
+  sha: sha256:65d17b4947a2122b418dd1f2082b052d69d4018891d1dcdc217cb5a99cd5557f
+ginkgo/pprof-0.6e76a2b.tar.gz:
+  size: 11714640
+  object_id: 6e269e0c-fa74-4a24-648e-1a06436eb51f
+  sha: sha256:e182294096242070e42ab06e848b4fbe3a5004d7d1383ab8d1579bd898ba7699
+ginkgo/semver-3.3.1.tar.gz:
+  size: 28210
+  object_id: b041c55f-88e4-4d61-6323-9d09c58c10cf
+  sha: sha256:495b165ada0aa6f8798d0ff2474c5982faf8e1b8418364149f490029f9f4cb35
+ginkgo/slim-sprig-2.20.1.tar.gz:
+  size: 708313
+  object_id: 03c34ab3-7ccb-40a0-74d3-2f1cf7235cb9
+  sha: sha256:b44381bc6867d5d18e1f059cde7294e977ed130db53e5c0bd342f0d359e66a27
 ginkgo/tail-nxadm-1.4.4.tar.gz:
-  size: 3889601
-  object_id: 58d52a2f-e4f8-4c41-7416-f5c878beecbd
-  sha: sha256:8822781bc57f805d798153fb7bae9b1a94be57b1bc01b19933c9ab4278eb5d24
-nginx/nginx-1.21.6.tar.gz:
-  size: 1073364
-  object_id: 1ae99e13-5bc8-450a-48ea-1ad03e64207e
-  sha: sha256:66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
-redis/redis-5.0.14.tar.gz:
-  size: 2000179
-  object_id: 41f56b55-cb4f-4600-540e-4a55e3ca5b99
-  sha: sha256:3ea5024766d983249e80d4aa9457c897a9f079957d0fb1f35682df233f997f32
-redis/redis-6.2.14.tar.gz:
-  size: 2496149
-  object_id: c4528c36-4181-4b61-7729-02c9977e9d3a
-  sha: sha256:34e74856cbd66fdb3a684fb349d93961d8c7aa668b06f81fd93ff267d09bc277
-redis/redis-7.2.5.tar.gz:
-  size: 3386454
-  object_id: 0e76d735-5543-4ffe-696a-04e87ff920be
-  sha: sha256:5981179706f8391f03be91d951acafaeda91af7fac56beffb2701963103e423d
+  size: 4770811
+  object_id: 635b80d1-8ccc-490b-603b-363a77be26e4
+  sha: sha256:4b6b1a143fbb33a0bfc3883517ea32fbaf630bbc170122b8be3f1bd048f1b336
+nginx/nginx-1.31.1.tar.gz:
+  size: 1337505
+  object_id: 53bc86c7-b6f6-4d4f-4706-706dd0362e2c
+  sha: sha256:9fcaaeb8f22544b09a19a761f3412c4112215422401634bebdd1296a403cc4bc
+valkey/valkey-8.1.4.tar.gz:
+  size: 3816705
+  object_id: f697a851-ae2e-40b6-49a3-425d6ab70040
+  sha: sha256:32350b017fee5e1a85f7e2d8580d581a0825ceae5cb3395075012c0970694dee

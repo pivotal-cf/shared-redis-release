@@ -21,8 +21,20 @@ tar xzf ginkgo/golang-sys-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.o
 mkdir -p "$GOPATH/src/golang.org/x/tools"
 tar zxvf ginkgo/golang-tools-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.org/x/tools"
 
+mkdir -p "$GOPATH/src/golang.org/x/mod"
+tar zxvf ginkgo/golang-mod-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.org/x/mod"
+
+mkdir -p "$GOPATH/src/golang.org/x/xerrors"
+tar zxvf ginkgo/golang-xerrors-*.tar.gz --strip-components=1 -C "$GOPATH/src/golang.org/x/xerrors"
+
 mkdir -p "$GOPATH/src/github.com/google/pprof"
 tar zxvf ginkgo/pprof-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/google/pprof"
+
+mkdir -p "$GOPATH/src/go.uber.org/automaxprocs"
+tar zxvf ginkgo/automaxprocs-*.tar.gz --strip-components=1 -C "$GOPATH/src/go.uber.org/automaxprocs"
+
+mkdir -p "$GOPATH/src/github.com/Masterminds/semver"
+tar zxvf ginkgo/semver-*.tar.gz --strip-components=1 -C "$GOPATH/src/github.com/Masterminds/semver"
 
 # remove pprof test binaries because they are failing CVE checks
 rm -rf $GOPATH/src/github.com/google/pprof/internal/report/testdata/

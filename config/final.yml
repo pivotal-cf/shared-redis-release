@@ -2,8 +2,6 @@
 final_name: shared-redis
 min_cli_version: 1.5.0.pre.1113
 blobstore:
-  provider: s3
+  provider: gcs
   options:
-    bucket_name: shared-redis-release-blobs
-    region: us-west-2
-    endpoint: https://s3-us-west-2.amazonaws.com
+    bucket_name: pcf-redis-shared-redis-bosh-release-blobs

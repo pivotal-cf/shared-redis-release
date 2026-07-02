@@ -1,0 +1,18 @@
+# abort script on any command that exits with a non zero value
+set -e
+
+target_dir="valkey_source"
+mkdir -p ${target_dir}
+
+tar xvf valkey/valkey-8.1.*.tar.gz -C ${target_dir} --strip-components 1
+
+cd ${target_dir}
+make
+
+BIN_TARGET=$BOSH_INSTALL_TARGET/bin
+mkdir $BIN_TARGET
+cp src/valkey-server ${BIN_TARGET}/redis-server
+cp src/valkey-cli ${BIN_TARGET}/redis-cli
+cp src/valkey-benchmark ${BIN_TARGET}/redis-benchmark
+cp src/valkey-check-aof ${BIN_TARGET}/redis-check-aof
+cp src/valkey-check-rdb ${BIN_TARGET}/redis-check-rdb
