@@ -5,4 +5,4 @@ metadata:
     nginx: '1.21.6'
 
 files:
-  - nginx/nginx-1.31.2.tar.gz
+  - nginx/nginx-1.31.3.tar.gz
