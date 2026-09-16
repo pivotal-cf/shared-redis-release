@@ -17,6 +17,8 @@ builds:
     version: 10.1.9
   94fdca09-6b5c-419f-6a14-9a81310338be:
     version: 10.1.7
+  962bdfe6-0f47-45fa-6b99-f0d4d6c19fc9:
+    version: 10.1.11
   9c722e1d-ccf4-4566-748a-4d9b7b77c841:
     version: 10.2.3
   af4910f2-ff39-41af-5141-a7c0bc85884b:
