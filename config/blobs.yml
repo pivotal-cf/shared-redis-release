@@ -2,10 +2,10 @@ ginkgo/automaxprocs-1.6.0.tar.gz:
   size: 24465
   object_id: 87bf07ca-388d-40bc-5fe3-63a15e7dd102
   sha: sha256:fb750295e270f668502fb139ff626bf5209033c7893b29521238cd04502e55cf
-ginkgo/ginkgo-2.33.1.tar.gz:
-  size: 903224
-  object_id: ae85d74b-e479-4b09-6f78-355d457fd53e
-  sha: sha256:974a10195667d749432c99834b4d3d00d9b6b6f1e4319d56c594ab7595c3297d
+ginkgo/ginkgo-2.34.0.tar.gz:
+  size: 916201
+  object_id: 3a4aa392-4374-43b6-6794-857f66e96d56
+  sha: sha256:3bcdcc11cb297ff6a2206c66a355e052fbf13e2e4c10815819bf16a5f719a0de
 ginkgo/golang-mod-0.17.0.tar.gz:
   size: 122062
   object_id: baeee66c-d1da-4023-5e9e-f8dac6ac79f0
