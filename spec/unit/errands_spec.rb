@@ -35,7 +35,7 @@ describe 'errands spec' do
       }
     }
   }
-  let(:broker_properties) { {protocol: 'https', port: 443} }
+  let(:broker_properties) { {'protocol' => 'https', 'port' => 443} }
   let(:renderer) { Bosh::Template::Renderer.new({context: manifest.to_json}) }
 
   let(:rendered_template_file) {
@@ -59,7 +59,7 @@ describe 'errands spec' do
 
     describe 'when SKIP_SSL_VALIDATION is true' do
       it 'skips certificate verification if configured to do so' do
-        manifest['properties']['cf'].merge!({skip_ssl_validation: true})
+        manifest['properties']['cf'].merge!({"skip_ssl_validation" => true})
 
         expect(File.read(rendered_template_file)).to include("SKIP_SSL_VALIDATION='--skip-ssl-validation'")
       end
@@ -67,7 +67,7 @@ describe 'errands spec' do
 
     describe 'when SKIP_SSL_VALIDATION is false' do
       it 'does not skip certificate verification' do
-        manifest['properties']['cf'].merge!({skip_ssl_validation: false})
+        manifest['properties']['cf'].merge!({"skip_ssl_validation" => false})
 
         expect(File.read(rendered_template_file)).to include("SKIP_SSL_VALIDATION=''")
       end

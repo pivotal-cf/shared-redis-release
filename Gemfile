@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.1.4'
+ruby '4.0.9'
 
 gem 'aws-sdk'
 gem 'bosh-template'
