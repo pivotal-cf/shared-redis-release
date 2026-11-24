@@ -53,7 +53,7 @@ shared_examples 'it errors when file is on wrong device' do |service_plan_name|
 
   it 'logs that the file should be in /var/vcap/store' do
      output, = bosh.ssh_with_error(deployment_name, @instance, "sudo #{RESTORE_BINARY} #{get_restore_args(service_plan_name, @service_instance.id, TEMP_COPY_PATH)}")
-    expect(output).to include 'Please move your rdb file to inside /var/vcap/store'
+     expect(output).to match(/please move your rdb file to inside \/var\/vcap\/store/i)
     expect(broker_registered?).to be true
   end
 end
